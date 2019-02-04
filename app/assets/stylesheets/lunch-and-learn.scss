@@ -30,7 +30,7 @@
 }
 
 .text1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .text2 {
@@ -41,6 +41,9 @@
   font-size: 1.5rem;
 }
 
+.text4 {
+  font-size: 1rem;
+}
 
 
 #hero{
@@ -55,22 +58,11 @@
 
 #hero-text-location {
   display: block;
-  margin-top: 425px;
-  margin-left: 200px;
+  margin-top: 520px;
+  // margin-left: 200px;
 }
 
 #hero-description {
   letter-spacing: '2px';
-  margin-top: 15px;
-}
-
-a {
-  color: white;
-}
-
-#hero-button {
-  height: 40px;
-  width: 200px;
-  color: black;
-  background-color: #B8D2E6;
+  margin-top: 25px;
 }
