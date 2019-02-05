@@ -6,16 +6,18 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
-    <%= javascript_include_tag "vendor/modernizr" %>
+
 
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <nav class="top-bar">
+  <nav class="top-bar shadow">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">LunchAndLearn</a></h1>
+        <a href="/">
+          <%= image_tag "logo.png", :class => 'logo' %>
+        </a>
       </li>
     </ul>
 
@@ -24,8 +26,8 @@
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => 'button large radius weight3', :id => 'top-bar-button-outline' %>
+          <%= link_to 'Sign In', new_user_session_path, :class => 'button large radius weight3', :id => 'top-bar-button'  %>
         <%- end -%>
       </ul>
     </section>

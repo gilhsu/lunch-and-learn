@@ -1,7 +1,11 @@
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #47525d
+  color: #5C5C5C
+}
+
+.row {
+  max-width: 120rem;
 }
 
 
@@ -42,7 +46,7 @@
 }
 
 .text4 {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 
@@ -58,11 +62,49 @@
 
 #hero-text-location {
   display: block;
-  margin-top: 520px;
-  // margin-left: 200px;
+  margin-top: 550px;
+  margin-left: 200px;
 }
 
 #hero-description {
   letter-spacing: '2px';
-  margin-top: 25px;
+  margin-top: 20px;
+}
+
+#top-bar-button {
+  margin-right: 40px;
+  width: 12rem;
+  height: 2.7rem;
+  top: 1.1rem;
+  padding-top: 0.45rem;
+  font-size: 1.25rem;
+}
+
+#top-bar-button-outline {
+  margin-right: 40px;
+  width: 12rem;
+  height: 2.7rem;
+  top: 1.1rem;
+  padding-top: 0.40rem;
+  font-size: 1.25rem;
+  border-color: #11AAB7;
+  border-style: solid;
+  border-width: 1.5px;
+  background-color: white;
+  color: #11AAB7;
+  top: 1.2rem;
+}
+
+#top-bar-button-outline:hover {
+  background-color: #d3e9ff;
+}
+
+.shadow {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1)
+}
+
+.logo {
+  max-height: 80px;
+  margin-left: 40px;
+  margin-top: 0.5rem; 
 }
