@@ -58,4 +58,5 @@ gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails', '~> 5.0'
+gem 'autoprefixer-rails'
 gem 'webpacker', '~> 3.3'
