@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_02_05_184352) do
     t.string "last_name", null: false
     t.string "avatar"
     t.text "bio"
-    t.bigint "company_id"
+    t.integer "company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
