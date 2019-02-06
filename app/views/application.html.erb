@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LunchAndLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+
+
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="top-bar shadow">
+    <ul class="title-area">
+      <li class="name">
+        <a href="/">
+          <%= image_tag "logo.png", :class => 'logo' %>
+        </a>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <%- if current_user -%>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <%- else -%>
+          <%= link_to 'Sign Up', new_user_registration_path, :class => 'button large radius weight3', :id => 'top-bar-button-outline' %>
+          <%= link_to 'Sign In', new_user_session_path, :class => 'button large radius weight3', :id => 'top-bar-button'  %>
+        <%- end -%>
+      </ul>
+    </section>
+  </nav>
+
+  <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'application' %>
+
+  <%- if Rails.env.development? || Rails.env.test? -%>
+    <%= javascript_tag do %>
+      window.railsEnv = '<%= Rails.env %>'
+    <%- end -%>
+  <%- end -%>
+  <%= javascript_pack_tag 'application' %>
+
+  <%= yield :extra_footer %>
+</body>
+</html>
