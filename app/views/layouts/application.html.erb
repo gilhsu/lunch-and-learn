@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>LunchAndLearn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="title-area">
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
+            <a href="/">
+              <%= image_tag "logo.png", :class => 'logo' %>
+            </a>
 
-  <nav class="top-bar shadow">
-    <ul class="title-area">
-      <li class="name">
-        <a href="/">
-          <%= image_tag "logo.png", :class => 'logo' %>
-        </a>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <%= link_to 'Sign Up', new_user_registration_path, :class => 'button large radius weight3', :id => 'top-bar-button-outline' %>
-          <%= link_to 'Sign In', new_user_session_path, :class => 'button large radius weight3', :id => 'top-bar-button'  %>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
+        </div>
+      </div>
+      <div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <%- if current_user -%>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <%- else -%>
+              <%= link_to 'Sign In', new_user_session_path, :class => 'button', :id => 'top-bar-button-outline'  %>
+              <%= link_to 'Sign Up', new_user_registration_path, :class => 'button', :id => 'top-bar-button' %>
+            <%- end -%>
+          </ul>
+        </div>
+      </div>
     </div>
-  <%- end -%>
 
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-
-  <%- if Rails.env.development? || Rails.env.test? -%>
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
     <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
 
-  <%= yield :extra_footer %>
-</body>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%- if Rails.env.development? || Rails.env.test? -%>
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
+    <%- end -%>
+    <%= javascript_pack_tag 'application' %>
+
+    <%= yield :extra_footer %>
+  </body>
 </html>

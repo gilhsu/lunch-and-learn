@@ -25,9 +25,9 @@ class DashboardContainer extends Component {
 
   render() {
     return(
-      <div className="row">
+      <div className="grid-x grid-margin-x">
         <h1>Hello From the React DashboardContainer!</h1>
-        <h1>The is the show page for User {this.props.params.id}</h1>
+        <h1 className="callout warning">The is the show page for User {this.props.params.id}</h1>
         <div className="small-4 columns" align="center">
           <DayPicker
             onDayClick={this.handleDayClick}
@@ -40,8 +40,8 @@ class DashboardContainer extends Component {
             <p>Please select a day.</p>
           )}
         </div>
-        <div className="small-8 columns">
-          <h1>The is supposed to go to the right of the calender</h1>
+        <div className="small-8 columns callout">
+          The is supposed to go to the right of the calender
         </div>
       </div>
     )
