@@ -5,17 +5,18 @@
   background: image-url("home-hero-web.jpg");
   background-position: left;
   background-size: cover;
-  // background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 #hero-text-location {
   display: block;
-  margin-top: 250px;
+  margin-top: 230px;
   margin-left: 150px;
 }
 
 #hero-description {
   letter-spacing: '2px';
+  margin-top: 5px;
 }
 
 #top-bar-button {
@@ -23,6 +24,10 @@
   width: 8rem;
   height: 1.7rem;
   line-height: 0;
+}
+
+li #top-bar-button {
+  margin-top: 6px;
 }
 
 #top-bar-button-outline {
@@ -71,4 +76,9 @@ button.radius, .button.radius {
 .form {
   width: 25%;
   padding-top: 50px;
+}
+
+.delete {
+  background-color: #c93830;
+  margin-top: 10px;
 }
