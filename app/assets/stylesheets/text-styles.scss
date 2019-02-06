@@ -55,3 +55,15 @@
 .text-left {
   text-align: left;
 }
+
+.align-center {
+
+    -webkit-box-pack: center;
+
+    -webkit-justify-content: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
+
+}
