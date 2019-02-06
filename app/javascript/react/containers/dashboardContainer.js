@@ -25,25 +25,27 @@ class DashboardContainer extends Component {
 
   render() {
     return(
-      <div className="grid-x grid-margin-x">
-        <h1>Hello From the React DashboardContainer!</h1>
-        <h1 className="callout warning">The is the show page for User {this.props.params.id}</h1>
-        <div className="small-4 columns" align="center">
-          <DayPicker
-            onDayClick={this.handleDayClick}
-            selectedDays={this.state.selectedDay}
-            disabledDays={{ daysOfWeek: [0, 6] }}
-          />
-          {this.state.selectedDay ? (
-            <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
-          ) : (
-            <p>Please select a day.</p>
-          )}
-        </div>
-        <div className="small-8 columns callout">
-          The is supposed to go to the right of the calender
+      <div className="grid-container">
+        <h1 className="text-center">Hello From the React DashboardContainer!</h1>
+        <div className="grid-x grid-margin-x">
+          <div className="cell small-4 align-center">
+            <DayPicker
+              onDayClick={this.handleDayClick}
+              selectedDays={this.state.selectedDay}
+              disabledDays={{ daysOfWeek: [0, 6] }}
+              />
+            {this.state.selectedDay ? (
+              <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
+            ) : (
+              <p>Please select a day.</p>
+            )}
+          </div>
+          <p className="callout warning cell small-8 text-right">The is the show page for User {this.props.params.id}<br/><br/>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
         </div>
       </div>
+
     )
   }
 }

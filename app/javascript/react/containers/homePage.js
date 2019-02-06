@@ -6,8 +6,8 @@ export const HomePage = (props) => {
   return (
     <div>
       <div id="hero">
-        <div className="row">
-          <div className="small-6" id="hero-text-location">
+        <div className="grid-x">
+          <div className="small-12 cell" id="hero-text-location">
             <div className="text1 weight3">
               Coordinating<br/>
               Lunch and Learns<br/>
