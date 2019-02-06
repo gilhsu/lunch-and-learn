@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
 
   resources :users, only: [:show]
-  resources :events, only: [:show]
+  resources :events, only: [:show, :new]
 end
