@@ -28,7 +28,7 @@ class DashboardContainer extends Component {
       <div className="grid-container">
         <h1 className="text-center">Hello From the React DashboardContainer!</h1>
         <div className="grid-x grid-margin-x">
-          <div className="cell small-4 align-center">
+          <div className="cell small-4 text-right">
             <DayPicker
               onDayClick={this.handleDayClick}
               selectedDays={this.state.selectedDay}

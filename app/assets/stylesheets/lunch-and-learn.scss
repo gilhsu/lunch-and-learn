@@ -1,18 +1,22 @@
 #hero{
-  height: 100vh;
-  display:flex;
+  height: 94vh;
+  display: flex;
   min-width: 100%;
   background: image-url("home-hero-web.jpg");
-  background-position: center;
+  background-position: left;
   background-size: cover;
   // background-attachment: fixed;
 }
 
-#hero-description {
-  letter-spacing: '2px';
-  margin-top: 20px;
+#hero-text-location {
+  display: block;
+  margin-top: 250px;
+  margin-left: 150px;
 }
 
+#hero-description {
+  letter-spacing: '2px';
+}
 
 #top-bar-button {
   margin-right: 20px;
@@ -28,7 +32,7 @@
   line-height: 0;
   border-color: #11AAB7;
   border-style: solid;
-  border-width: 1.5px;
+  border-width: 1.4px;
   background-color: white;
   color: #11AAB7;
 }
@@ -38,7 +42,7 @@
 }
 
 .shadow {
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1)
 }
 
 .logo {
@@ -49,6 +53,7 @@
 
 .top-bar, .top-bar ul {
   background-color: white;
+  padding: 0.25rem;
 }
 
 .blue-box {
@@ -57,3 +62,8 @@
   font-weight: 500;
   padding: 20px;
 }
+
+button.radius, .button.radius {
+    border-radius: 5px; }
+  button.round, .button.round {
+    border-radius: 1000px; }
