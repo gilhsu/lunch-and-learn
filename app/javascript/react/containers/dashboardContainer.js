@@ -68,8 +68,9 @@ class DashboardContainer extends Component {
 
     return(
       <div className="grid-container">
-        <h1 className="text-center">Hello From the React DashboardContainer!</h1>
-
+        <br/>
+        <br/>
+        <br/>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
             <DayPicker

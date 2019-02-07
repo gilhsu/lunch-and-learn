@@ -12,14 +12,17 @@ const EventTile = (props) => {
       <div className="text3 weight5 primary">
         Event Pending
       </div>
+      <div className="text3 weight3">
+        Sent On: {convertedDate.toDateString()}
+      </div>
       <div className="text1 weight4">
-        {props.name}
+        {props.company}
       </div>
       <div className="text2 weight3">
-        Sent to: {props.email}
+        Event Name: {props.name}
       </div>
-      <div className="text3 weight3">
-        Invitation sent on: {convertedDate.toDateString()}
+      <div className="text2 weight3">
+        Sent To: {props.email}
       </div>
     </div>
   );
