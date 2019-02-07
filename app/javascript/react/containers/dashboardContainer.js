@@ -30,10 +30,6 @@ class DashboardContainer extends Component {
     this.fetchEventData(id)
   }
 
-  // componentDidUpdate(prevState) {
-  //   debugger
-  // }
-
   fetchEventData(id){
   fetch(`/api/v1/users/${id}`)
     .then(response => {
@@ -52,17 +48,12 @@ class DashboardContainer extends Component {
 
   render() {
     console.log(this.state)
-    // let events = this.state.events.map(event => {
-    //   return (
-    //
-    //   )
-    // })
+
     return(
       <div className="grid-container">
         <h1 className="text-center">Hello From the React DashboardContainer!</h1>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
-          test
             <DayPicker
               onDayClick={this.handleDayClick}
               selectedDays={this.state.selectedDay}
