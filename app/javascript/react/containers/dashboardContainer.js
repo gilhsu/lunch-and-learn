@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DayPicker from 'react-day-picker';
-import EventsContainer from './eventsContainer'
+import EventsContainer from './EventsContainer'
 
 class DashboardContainer extends Component {
   constructor(props) {
