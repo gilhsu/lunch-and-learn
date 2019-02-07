@@ -4,6 +4,7 @@ const EmailField = (props) => {
 
 
   return (
+    test
     <label>{props.label}
       <input
         name={props.name}

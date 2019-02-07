@@ -22,6 +22,7 @@ class EventsContainer extends Component {
     return(
       <div className="">
         {events}
+        test
       </div>
     )
   }

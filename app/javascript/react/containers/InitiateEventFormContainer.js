@@ -65,6 +65,7 @@ class InitiateEventFormContainer extends Component {
         <div className="form cell small-6">
           <div className="text1 weight7">New Event Form</div>
           <br/>
+          test
           <form onSubmit={this.handleSubmit} action='/'>
             <NameField
               content={this.state.name}
