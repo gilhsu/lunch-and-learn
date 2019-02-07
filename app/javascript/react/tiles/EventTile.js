@@ -4,7 +4,7 @@ const EventTile = (props) => {
 
   return (
     <div className="text1 weight3 horizontal-line">
-      {props.name} h
+      {props.name}
     </div>
   );
 }
