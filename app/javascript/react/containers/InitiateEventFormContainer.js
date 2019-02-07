@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router'
-import NameField from '../components/NameField'
-import EmailField from '../components/EmailField'
-import DescriptionField from '../components/DescriptionField'
+import NameField from '../components/nameField'
+import EmailField from '../components/emailField'
+import DescriptionField from '../components/descriptionField'
 
 class InitiateEventFormContainer extends Component {
   constructor(props) {

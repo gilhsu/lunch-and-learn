@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EventTile from '../tiles/EventTile'
+import EventTile from '../tiles/eventTile'
 
 class EventsContainer extends Component {
   constructor(props) {
