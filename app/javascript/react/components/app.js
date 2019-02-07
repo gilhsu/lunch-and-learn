@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, IndexRoute, Router, browserHistory, Link } from "react-router";
-import HomePage from "../containers/homePage";
-import DashboardContainer from "../containers/dashboardContainer";
-import InitiateEventFormContainer from "../containers/initiateEventFormContainer";
+import HomePage from "../containers/HomePage";
+import DashboardContainer from "../containers/DashboardContainer";
+import InitiateEventFormContainer from "../containers/InitiateEventFormContainer";
 
 const App = props => {
   return (
