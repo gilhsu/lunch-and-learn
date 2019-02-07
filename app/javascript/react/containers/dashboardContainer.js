@@ -69,6 +69,7 @@ class DashboardContainer extends Component {
     return(
       <div className="grid-container">
         <h1 className="text-center">Hello From the React DashboardContainer!</h1>
+
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
             <DayPicker
@@ -85,10 +86,12 @@ class DashboardContainer extends Component {
               <a href={`/events/new`} className="button radius">Create A New Event</a>
             </div>
           </div>
-          <div className="cell small-6">
-            <button className="button radius" onClick={clickAll}>All</button>
-            <button className="button radius" onClick={clickConfirmed}>Confirmed</button>
-            <button className="button radius" onClick={clickPending}>Pending</button>
+          <div className="cell small-7">
+            <div className="">
+              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickAll}>All</button>
+              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickConfirmed}>Confirmed</button>
+              <button className="button small radius" onClick={clickPending}>Pending</button>
+            </div>
             <EventsContainer events={data}/>
           </div>
         </div>
