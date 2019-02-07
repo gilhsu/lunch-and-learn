@@ -1,3 +1,9 @@
+$primary-color: #11AAB7;
+
+.primary {
+  color: $primary-color;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -66,4 +72,8 @@
 
     justify-content: center;
 
+}
+
+#event-tile {
+  padding: 30px 10px 30px 10px;
 }

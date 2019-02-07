@@ -16,6 +16,9 @@ class EventsContainer extends Component {
         <EventTile
           key={event.id}
           name={event.name}
+          email={event.email}
+          date={event.created_at}
+          updated={event.updated_at}
         />
       )
     })

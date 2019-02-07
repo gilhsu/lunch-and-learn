@@ -7,7 +7,10 @@ class DashboardContainer extends Component {
     super(props);
     this.state = {
       selectedDay: undefined,
-      events: []
+      events: [],
+      confirmed: [],
+      pending: [],
+      show: ""
     }
     this.handleDayClick = this.handleDayClick.bind(this);
   }
@@ -42,12 +45,26 @@ class DashboardContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ events: body })
+      this.setState({ events: body.events, confirmed: body.confirmed, pending: body.pending })
     })
 }
 
   render() {
     console.log(this.state)
+
+    let data = this.state.events
+
+    let clickAll = () => {
+      data = this.state.events
+    }
+
+    let clickConfirmed = () => {
+      data = this.state.confirmed
+    }
+
+    let clickPending = () => {
+      data = this.state.pending
+    }
 
     return(
       <div className="grid-container">
@@ -69,7 +86,10 @@ class DashboardContainer extends Component {
             </div>
           </div>
           <div className="cell small-6">
-            <EventsContainer events={this.state.events}/>
+            <button className="button radius" onClick={clickAll}>All</button>
+            <button className="button radius" onClick={clickConfirmed}>Confirmed</button>
+            <button className="button radius" onClick={clickPending}>Pending</button>
+            <EventsContainer events={data}/>
           </div>
         </div>
       </div>
