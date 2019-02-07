@@ -82,3 +82,14 @@ button.radius, .button.radius {
   background-color: #c93830;
   margin-top: 10px;
 }
+
+.vertical-line {
+  border-right: thin solid #e5e5e5;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.horizontal-line {
+  border-bottom: thin solid #e5e5e5;
+  padding-bottom: 20px;
+}
