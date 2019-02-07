@@ -70,7 +70,7 @@ class DashboardContainer extends Component {
             {this.state.selectedDay ? (
               <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
             ) : (
-              <p>Please select a day .</p>
+              <p>Please select a day here.</p>
             )}
             <div className="cell small-12 text-center">
               <a href={`/events/new`} className="button radius">Create A New Event</a>
