@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, IndexRoute, Router, browserHistory, Link } from "react-router";
-import HomePage from "../containers/HomePage";
+import HomePage from "../containers/homePage";
 import DashboardContainer from "../containers/DashboardContainer";
 import InitiateEventFormContainer from "../containers/InitiateEventFormContainer";
 
