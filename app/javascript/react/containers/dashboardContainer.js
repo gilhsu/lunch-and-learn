@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DayPicker from 'react-day-picker';
+import EventsContainer from './EventsContainer'
 
 class DashboardContainer extends Component {
   constructor(props) {
@@ -60,8 +61,7 @@ class DashboardContainer extends Component {
       <div className="grid-container">
         <h1 className="text-center">Hello From the React DashboardContainer!</h1>
         <div className="grid-x grid-margin-x">
-          <div className="cell small-4 text-center">
-            <a href={`/events/new`} className="button radius">Create A New Event</a>
+          <div className="cell small-4 text-center vertical-line">
             <DayPicker
               onDayClick={this.handleDayClick}
               selectedDays={this.state.selectedDay}
@@ -72,10 +72,13 @@ class DashboardContainer extends Component {
             ) : (
               <p>Please select a day.</p>
             )}
+            <div className="cell small-12 text-center">
+              <a href={`/events/new`} className="button radius">Create A New Event</a>
+            </div>
           </div>
-          <p className="callout warning cell small-8 text-right">The is the show page for User {this.props.params.id}<br/><br/>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          <div className="cell small-6">
+            <EventsContainer events={this.state.events}/>
+          </div>
         </div>
       </div>
 

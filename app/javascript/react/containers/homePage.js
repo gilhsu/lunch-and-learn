@@ -18,7 +18,7 @@ export const HomePage = (props) => {
             </div>
             <div className="text3 weight3" id="hero-description">
               The <span className="weight5">Lunch<span className="text2 weight5" style={{color: '#11AAB7'}}>&</span>Learn</span> webapp helps Sales Teams<br/>
-              easily invite and keep track of their upcoming<br/>
+              easily invite and keep track of upcoming<br/>
               catered lunch presentations.
             </div>
             <a href="www.google.com" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
