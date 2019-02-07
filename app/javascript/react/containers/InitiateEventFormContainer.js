@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import NameField from '../components/NameField'
 import EmailField from '../components/EmailField'
 import DescriptionField from '../components/DescriptionField'
+import CompanyField from '../components/CompanyField'
 
 class InitiateEventFormContainer extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class InitiateEventFormContainer extends Component {
       name: "",
       email: "",
       description: "",
+      client_company: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -26,9 +28,10 @@ class InitiateEventFormContainer extends Component {
       name: this.state.name,
       email: this.state.email,
       description: this.state.description,
+      client_company: this.state.client_company
     }
     this.postEvent(formPayload)
-    this.setState({name: "", email: "", description: ""})
+    this.setState({name: "", email: "", description: "", client_company: ""})
   }
 
 
@@ -53,6 +56,7 @@ class InitiateEventFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
+        debugger
         return location.href=`/users/${body.user_id}`
       })
     }
@@ -65,12 +69,17 @@ class InitiateEventFormContainer extends Component {
         <div className="form cell small-6">
           <div className="text1 weight7">New Event Form</div>
           <br/>
-          test
           <form onSubmit={this.handleSubmit} action='/'>
             <NameField
               content={this.state.name}
-              label="Lunch&Learn Name"
+              label="Lunch&Learn Event Name"
               name="name"
+              passOnChange={this.handleChange}
+            />
+          <CompanyField
+              content={this.state.client_company}
+              label="Presentee Company Name"
+              name="client_company"
               passOnChange={this.handleChange}
             />
             <EmailField

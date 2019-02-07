@@ -7,7 +7,10 @@ class DashboardContainer extends Component {
     super(props);
     this.state = {
       selectedDay: undefined,
-      events: []
+      events: [],
+      confirmed: [],
+      pending: [],
+      show: ""
     }
     this.handleDayClick = this.handleDayClick.bind(this);
   }
@@ -42,16 +45,32 @@ class DashboardContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ events: body })
+      this.setState({ events: body.events, confirmed: body.confirmed, pending: body.pending })
     })
 }
 
   render() {
     console.log(this.state)
 
+    let data = this.state.events
+
+    let clickAll = () => {
+      data = this.state.events
+    }
+
+    let clickConfirmed = () => {
+      data = this.state.confirmed
+    }
+
+    let clickPending = () => {
+      data = this.state.pending
+    }
+
     return(
       <div className="grid-container">
-        <h1 className="text-center">Hello From the React DashboardContainer!</h1>
+        <br/>
+        <br/>
+        <br/>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
             <DayPicker
@@ -68,8 +87,13 @@ class DashboardContainer extends Component {
               <a href={`/events/new`} className="button radius">Create A New Event</a>
             </div>
           </div>
-          <div className="cell small-6">
-            <EventsContainer events={this.state.events}/>
+          <div className="cell small-7">
+            <div className="">
+              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickAll}>All</button>
+              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickConfirmed}>Confirmed</button>
+              <button className="button small radius" onClick={clickPending}>Pending</button>
+            </div>
+            <EventsContainer events={data}/>
           </div>
         </div>
       </div>

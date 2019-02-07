@@ -60,3 +60,4 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'webpacker', '~> 3.3'
+gem "active_model_serializers"
