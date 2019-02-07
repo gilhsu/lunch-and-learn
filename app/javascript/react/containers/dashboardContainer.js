@@ -6,6 +6,7 @@ class DashboardContainer extends Component {
     super(props);
     this.state = {
       selectedDay: undefined,
+      events: []
     }
     this.handleDayClick = this.handleDayClick.bind(this);
   }
@@ -23,13 +24,44 @@ class DashboardContainer extends Component {
     this.setState({ selectedDay: day });
   }
 
+  componentDidMount() {
+    let id = this.props.params.id;
+    this.fetchEventData(id)
+  }
+
+  // componentDidUpdate(prevState) {
+  //   debugger
+  // }
+
+  fetchEventData(id){
+  fetch(`/api/v1/users/${id}`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ events: body })
+    })
+}
+
   render() {
+    console.log(this.state)
+    // let events = this.state.events.map(event => {
+    //   return (
+    //
+    //   )
+    // })
     return(
       <div className="grid-container">
         <h1 className="text-center">Hello From the React DashboardContainer!</h1>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center">
-            <a href="/events/new" className="button radius">Create A New Event</a>
+            <a href={`/events/new`} className="button radius">Create A New Event</a>
             <DayPicker
               onDayClick={this.handleDayClick}
               selectedDays={this.state.selectedDay}

@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :events, only: [:show, :new]
 
+
   namespace :api do
-  namespace :v1 do
-    resources :events, only: [:create]
+    namespace :v1 do
+      resources :users, only: [:show]
+      resources :events, only: [:create]
+    end
   end
-end
 end

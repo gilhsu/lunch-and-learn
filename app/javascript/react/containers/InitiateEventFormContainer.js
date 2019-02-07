@@ -25,7 +25,7 @@ class InitiateEventFormContainer extends Component {
     let formPayload = {
       name: this.state.name,
       email: this.state.email,
-      description: this.state.description
+      description: this.state.description,
     }
     this.postEvent(formPayload)
     this.setState({name: "", email: "", description: ""})
@@ -34,7 +34,7 @@ class InitiateEventFormContainer extends Component {
 
 
   postEvent(event){
-    fetch("/api/v1/events/", {
+    fetch(`/api/v1/events/`, {
       method: 'POST',
       body: JSON.stringify(event),
       credentials: 'same-origin',
@@ -53,7 +53,7 @@ class InitiateEventFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        return location.href=`/users/${body.id}`
+        return location.href=`/users/${body.user_id}`
       })
     }
 
