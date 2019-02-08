@@ -1,3 +1,5 @@
+$line-color: #d1d1d1;
+
 #hero{
   height: 94vh;
   display: flex;
@@ -84,13 +86,13 @@ button.radius, .button.radius {
 }
 
 .vertical-line {
-  border-right: thin solid #e5e5e5;
+  border-right: thin solid $line-color;
   padding-left: 40px;
   padding-right: 40px;
 }
 
 .horizontal-line {
-  border-bottom: thin solid #e5e5e5;
+  border-bottom: thin solid $line-color;
   padding-bottom: 20px;
 }
 
@@ -101,4 +103,9 @@ button.radius, .button.radius {
 
 #event-tile {
   padding: 25px 10px 25px 10px;
+}
+
+#dashboard-photo {
+  height: 80px;
+  border-radius: 1000px;
 }

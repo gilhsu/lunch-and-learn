@@ -7,9 +7,10 @@ FactoryBot.define do
     password_confirmation { 'password' }
     first_name { 'james' }
     last_name { 'franco' }
-    avatar { 'www.aws.com' }
+    profile_photo { 'www.aws.com' }
     bio { 'Hi, I\'m the bio' }
     rep { true }
+    company_id { 1 }
   end
 
   factory :company do

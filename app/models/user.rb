@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :events
+  belongs_to :company
 
   def name
    return self.first_name + " " + self.last_name

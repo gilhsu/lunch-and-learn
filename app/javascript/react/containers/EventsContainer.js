@@ -11,6 +11,7 @@ class EventsContainer extends Component {
 
 
   render() {
+
     let events = this.props.events.map(event => {
       return(
         <EventTile
