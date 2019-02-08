@@ -73,28 +73,36 @@ class DashboardContainer extends Component {
         <br/>
         <br/>
         <div className="grid-x grid-margin-x">
-          <div className="cell small-4 text-center vertical-line">
-            <DayPicker
-              onDayClick={this.handleDayClick}
-              selectedDays={this.state.selectedDay}
-              disabledDays={{ daysOfWeek: [0, 6] }}
-              />
-            {this.state.selectedDay ? (
-              <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
-            ) : (
-              <p>Please select a day here.</p>
-            )}
-            <div className="cell small-12 text-center">
-              <a href={`/events/new`} className="button radius">Create A New Event</a>
+          <div className="cell small-4 vertical-line">
+            <div className="text-center">
+
+              <div className="small-12 text2 weight7 primary" style={{marginBottom: '10px'}}>
+                Select Day
+              </div>
+              <DayPicker
+                onDayClick={this.handleDayClick}
+                selectedDays={this.state.selectedDay}
+                disabledDays={{ daysOfWeek: [0, 6] }}
+                />
+              {this.state.selectedDay ? (
+                <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
+              ) : (
+                <p>Please select a day here.</p>
+              )}
+              <div className="cell small-12 text-center">
+                <a href={`/events/new`} className="button radius">Create A New Event</a>
+              </div>
             </div>
           </div>
-          <div className="cell small-7">
+          <div className="cell small-8">
             <div className="">
               <button className="button small radius"  onClick={this.clickAll}>All</button>
               <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
               <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
             </div>
-            <EventsContainer events={this.state.show}/>
+            <div id="event-container-scroll">
+              <EventsContainer events={this.state.show}/>
+            </div>
           </div>
         </div>
       </div>
