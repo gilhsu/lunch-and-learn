@@ -75,7 +75,9 @@ class DashboardContainer extends Component {
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 vertical-line">
             <div className="text-center">
-
+              <div>
+                Hello!
+              </div>
               <div className="small-12 text2 weight7 primary" style={{marginBottom: '10px'}}>
                 Select Day
               </div>
