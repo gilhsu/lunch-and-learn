@@ -71,7 +71,7 @@ class DashboardContainer extends Component {
   render() {
     let company
     let addCompany
-    if (this.state.company.name) {
+    if (this.state.company) {
       company = this.state.company.name
     } else {
       addCompany = "Add Company"
@@ -84,7 +84,7 @@ class DashboardContainer extends Component {
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 vertical-line">
             <div className="">
-              <div className="grid-x small-12 align-center horizontal-line">
+              <div className="grid-x small-12 align-center horizontal-line" style={{marginTop: '10px'}}>
                 <div className="cell small-4">
                   <img src={this.state.user_photo} id="dashboard-photo"></img>
                 </div>
@@ -94,11 +94,11 @@ class DashboardContainer extends Component {
                   </div>
                   <div className="text4 weight7 primary">
                     {company}
-                    <a href='/company/new/'>{addCompany}</a>
+                    <a href='/company/new/' className="text4 weight7 primary">{addCompany}</a>
                   </div>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="text-center" style={{marginTop: "20px"}}>
                 <DayPicker
                   onDayClick={this.handleDayClick}
                   selectedDays={this.state.selectedDay}
