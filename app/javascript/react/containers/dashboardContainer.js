@@ -69,9 +69,6 @@ class DashboardContainer extends Component {
 }
 
   render() {
-    console.log(this.state)
-    console.log(this.state.pending)
-
     let company
     let addCompany
     if (this.state.company.name) {
@@ -91,11 +88,11 @@ class DashboardContainer extends Component {
                 <div className="cell small-4">
                   <img src={this.state.user_photo} id="dashboard-photo"></img>
                 </div>
-                <div className="cell small-8" style={{padding: '20px 0px 0px 20px'}}>
+                <div className="cell small-8" style={{padding: '10px 0px 0px 5px'}}>
                   <div className="text2 weight5">
                     {this.state.user.first_name} {this.state.user.last_name}
                   </div>
-                  <div className="text4 weight5 primary">
+                  <div className="text4 weight7 primary">
                     {company}
                     <a href='/company/new/'>{addCompany}</a>
                   </div>
