@@ -10,7 +10,7 @@
 
 #hero-text-location {
   display: block;
-  margin-top: 230px;
+  margin-top: 250px;
   margin-left: 150px;
 }
 
@@ -75,7 +75,7 @@ button.radius, .button.radius {
 
 .form {
   width: 25%;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 .delete {
@@ -92,4 +92,13 @@ button.radius, .button.radius {
 .horizontal-line {
   border-bottom: thin solid #e5e5e5;
   padding-bottom: 20px;
+}
+
+#event-container-scroll {
+  height: 500px;
+  overflow: scroll;
+}
+
+#event-tile {
+  padding: 25px 10px 25px 10px;
 }
