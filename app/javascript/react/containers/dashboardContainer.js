@@ -10,9 +10,12 @@ class DashboardContainer extends Component {
       events: [],
       confirmed: [],
       pending: [],
-      show: ""
+      show: []
     }
     this.handleDayClick = this.handleDayClick.bind(this);
+    this.clickAll = this.clickAll.bind(this);
+    this.clickConfirmed = this.clickConfirmed.bind(this);
+    this.clickPending = this.clickAll.bind(this);
   }
 
   handleDayClick(day, { selected, disabled }) {
@@ -26,6 +29,18 @@ class DashboardContainer extends Component {
       return;
     }
     this.setState({ selectedDay: day });
+  }
+
+  clickAll = () => {
+    this.setState({ show: this.state.events })
+  }
+
+  clickConfirmed = () => {
+    this.setState({ show: this.state.confirmed })
+  }
+
+  clickPending = () => {
+    this.setState({ show: this.state.pending })
   }
 
   componentDidMount() {
@@ -45,26 +60,12 @@ class DashboardContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ events: body.events, confirmed: body.confirmed, pending: body.pending })
+      this.setState({ events: body.events, confirmed: body.confirmed, pending: body.pending, show: body.events })
     })
 }
 
   render() {
     console.log(this.state)
-
-    let data = this.state.events
-
-    let clickAll = () => {
-      data = this.state.events
-    }
-
-    let clickConfirmed = () => {
-      data = this.state.confirmed
-    }
-
-    let clickPending = () => {
-      data = this.state.pending
-    }
 
     return(
       <div className="grid-container">
@@ -89,11 +90,11 @@ class DashboardContainer extends Component {
           </div>
           <div className="cell small-7">
             <div className="">
-              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickAll}>All</button>
-              <button className="button small radius" style={{marginRight: '5px'}} onClick={clickConfirmed}>Confirmed</button>
-              <button className="button small radius" onClick={clickPending}>Pending</button>
+              <button className="button small radius"  onClick={this.clickAll}>All</button>
+              <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
+              <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
             </div>
-            <EventsContainer events={data}/>
+            <EventsContainer events={this.state.show}/>
           </div>
         </div>
       </div>
