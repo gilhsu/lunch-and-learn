@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router'
-import NameField from '../components/NameField'
-import EmailField from '../components/EmailField'
-import DescriptionField from '../components/DescriptionField'
-import CompanyField from '../components/CompanyField'
+import TextField from '../components/TextField'
 
 class InitiateEventFormContainer extends Component {
   constructor(props) {
@@ -70,25 +67,25 @@ class InitiateEventFormContainer extends Component {
           <div className="text1 weight7">New Event Form</div>
           <br/>
           <form onSubmit={this.handleSubmit} action='/'>
-            <NameField
+            <TextField
               content={this.state.name}
               label="Lunch&Learn Event Name"
               name="name"
               passOnChange={this.handleChange}
             />
-          <CompanyField
+            <TextField
               content={this.state.client_company}
               label="Presentee Company Name"
               name="client_company"
               passOnChange={this.handleChange}
             />
-            <EmailField
+            <TextField
                 content={this.state.email}
                 label="Client Email"
                 name="email"
                 passOnChange={this.handleChange}
               />
-            <DescriptionField
+            <TextField
                 content={this.state.description}
                 label="Event Description"
                 name="description"

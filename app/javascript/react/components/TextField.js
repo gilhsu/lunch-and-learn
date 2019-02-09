@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CompanyField = (props) => {
+const TextField = (props) => {
 
 
   return (
@@ -15,4 +15,4 @@ const CompanyField = (props) => {
   );
 }
 
-export default CompanyField;
+export default TextField;
