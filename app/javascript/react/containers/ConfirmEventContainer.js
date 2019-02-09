@@ -77,7 +77,6 @@ class ConfirmEventContainer extends Component {
     return(
       <div className="">
         <br/>
-        <br/>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
             <EventPresenterTile
@@ -86,7 +85,7 @@ class ConfirmEventContainer extends Component {
               userPhoto={this.state.user_photo}
               />
           </div>
-          <div className="cell small-8 container-scroll">
+          <div className="cell small-8">
             <EventDetailsFormContainer
               handleSubmit = {this.handleSubmit}
             />

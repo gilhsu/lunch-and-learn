@@ -134,7 +134,7 @@ class DashboardContainer extends Component {
               <button className={buttonConfirmedStyle} style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
               <button className={buttonPendingStyle} style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
             </div>
-            <div class="container-scroll">
+            <div className="container-scroll">
               <EventsContainer events={this.state.show}/>
             </div>
           </div>
