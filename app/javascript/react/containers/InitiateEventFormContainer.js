@@ -72,24 +72,28 @@ class InitiateEventFormContainer extends Component {
               label="Lunch&Learn Event Name"
               name="name"
               passOnChange={this.handleChange}
+              required="true"
             />
             <TextField
               content={this.state.client_company}
               label="Presentee Company Name"
               name="client_company"
               passOnChange={this.handleChange}
+              required="true"
             />
             <TextField
                 content={this.state.email}
                 label="Client Email"
                 name="email"
                 passOnChange={this.handleChange}
+                required="true"
               />
             <TextField
                 content={this.state.description}
                 label="Event Description"
                 name="description"
                 passOnChange={this.handleChange}
+                required="true"
               />
             <br/>
             <input className="button radius submit" type='submit' value='Submit'></input><br/>

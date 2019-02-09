@@ -11,6 +11,7 @@ const TextField = (props) => {
         value={props.content}
         placeholder={props.placeholder}
         onChange={props.passOnChange}
+        required={props.required}
       />
     </label>
   );

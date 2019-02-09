@@ -75,7 +75,7 @@ class ConfirmEventContainer extends Component {
   render() {
     let userName = `${this.state.user.first_name} ${this.state.user.last_name}`
     return(
-      <div className="">
+      <div className="grid-container">
         <br/>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 text-center vertical-line">
@@ -85,7 +85,7 @@ class ConfirmEventContainer extends Component {
               userPhoto={this.state.user_photo}
               />
           </div>
-          <div className="cell small-8">
+          <div className="cell small-8 overflow-hidden">
             <EventDetailsFormContainer
               handleSubmit = {this.handleSubmit}
             />

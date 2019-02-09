@@ -11,14 +11,10 @@ const FoodPicker = (props) => {
     >
       <option value="default" disabled={true}>{props.defaultLabel}</option>
       <option value="sandwiches">Sandwiches</option>
-      <option value="sushi">Sushi</option>
-      <option value="AZ">AZ</option>
-      <option value="AR">AR</option>
-      <option value="CA">CA</option>
-      <option value="CO">CO</option>
-      <option value="CT">CT</option>
-      <option value="DC">DC</option>
-      <option value="DE">DE</option>
+      <option value="salad">Salad</option>
+      <option value="pizza">Pizza</option>
+      <option value="mediterranean">Mediterranean</option>
+      <option value="soup">Soup</option>
     </select>
   );
 }

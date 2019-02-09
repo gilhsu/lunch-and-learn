@@ -10,6 +10,7 @@ const NumberPicker = (props) => {
       name={props.name}
     >
       <option value="default" disabled={true}>{props.defaultLabel}</option>
+      <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>

@@ -11,16 +11,20 @@ class EventDetailsFormContainer extends Component {
     super(props);
     this.state = {
       selectedDay: undefined,
+      time: "12:00PM",
       firstName: "",
       lastName: "",
       email: "",
-      description: "",
-      clientCompany: "",
-      time: "12:00PM",
+      phone: "",
+      address: "",
+      suite: "",
+      city: "",
       state: "MA",
+      zip: "",
       foodOne: "default",
       foodTwo: "default",
       vegetarian: "default",
+      notes: "",
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -47,22 +51,48 @@ class EventDetailsFormContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    debugger
     let formPayload = {
-      name: this.state.name,
+      selectedDay: this.state.selectedDay,
+      time: this.state.time,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       email: this.state.email,
-      description: this.state.description,
-      client_company: this.state.client_company
+      phone: this.state.phone,
+      address: this.state.address,
+      suite: this.state.suite,
+      city: this.state.city,
+      state: this.state.state,
+      zip: this.state.zip,
+      foodOne: this.state.foodOne,
+      foodTwo: this.state.foodTwo,
+      vegetarian: this.state.vegetarian,
+      notes: this.state.notes
     }
     this.postEvent(formPayload)
-    this.setState({name: "", email: "", description: "", client_company: ""})
+    this.setState({
+      selectedDay: undefined,
+      time: "12:00PM",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      suite: "",
+      city: "",
+      state: "MA",
+      zip: "",
+      foodOne: "default",
+      foodTwo: "default",
+      vegetarian: "default",
+      notes: "",
+    })
   }
 
   handleSelect(event) {
     event.preventDefault()
     this.setState({time: event.target.value});
   }
-
-
 
   postEvent(event){
     fetch(`/api/v1/events/`, {
@@ -129,16 +159,17 @@ class EventDetailsFormContainer extends Component {
             <div className="text2 weight7">
               3. Fill in Details
             </div>
-              <form onSubmit={this.handleSubmit} action='/'>
+              <form onSubmit={this.handleSubmit}>
                 <fieldset>
                   <legend>Point of Contact Info</legend>
                     <div className="grid-x small-12">
                       <div className="cell small-6">
                         <TextField
-                          content={this.state.name}
+                          content={this.state.firstName}
                           placeholder="First Name"
                           name="firstName"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                       <div className="cell small-6" style={{paddingLeft: '10px'}}>
@@ -147,6 +178,7 @@ class EventDetailsFormContainer extends Component {
                           placeholder="Last Name"
                           name="lastName"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                     </div>
                     <div className="grid-x small-12">
@@ -156,14 +188,16 @@ class EventDetailsFormContainer extends Component {
                           placeholder="Email"
                           name="email"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                       <div className="small-4" style={{paddingLeft: '10px'}}>
                         <TextField
-                          content={this.state.email}
+                          content={this.state.phone}
                           placeholder="Phone Number"
                           name="phone"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                     </div>
@@ -178,10 +212,11 @@ class EventDetailsFormContainer extends Component {
                           placeholder="Address"
                           name="address"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                       <div className="cell small-4" style={{paddingLeft: '10px'}}>
-                        <TextField style={{color: 'red'}}
+                        <TextField
                           content={this.state.suite}
                           placeholder="Suite"
                           name="suite"
@@ -194,6 +229,7 @@ class EventDetailsFormContainer extends Component {
                           placeholder="City"
                           name="city"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                       <div className="small-2" style={{paddingLeft: '10px'}}>
@@ -209,6 +245,7 @@ class EventDetailsFormContainer extends Component {
                           placeholder="Zip Code"
                           name="zip"
                           passOnChange={this.handleChange}
+                          required="true"
                         />
                       </div>
                     </div>
@@ -254,9 +291,9 @@ class EventDetailsFormContainer extends Component {
                   </div>
                 </fieldset>
                 <fieldset>
-                  <legend>Notes</legend>
+                  <legend>Notes For Your Presenter</legend>
                     <div className="cell small-8">
-                      <TextField style={{color: 'red'}}
+                      <TextField
                         content={this.state.notes}
                         placeholder="Allergies, Parking Info, Security Access, Etc."
                         name="notes"

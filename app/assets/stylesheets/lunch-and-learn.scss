@@ -100,8 +100,12 @@ button.radius, .button.radius {
 }
 
 .container-scroll {
-  height: 550px;
+  height: 580px;
   overflow: scroll;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 #event-tile {
