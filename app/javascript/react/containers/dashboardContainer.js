@@ -11,7 +11,8 @@ class DashboardContainer extends Component {
       company: {},
       confirmed: [],
       pending: [],
-      show: []
+      show: [],
+      buttonConfirmed: true,
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.clickConfirmed = this.clickConfirmed.bind(this);
@@ -34,16 +35,19 @@ class DashboardContainer extends Component {
 
   clickConfirmed = () => {
     this.setState({ show: this.state.confirmed })
+    this.setState({ buttonConfirmed: true})
   }
 
   clickPending = () => {
     this.setState({ show: this.state.pending })
+    this.setState({ buttonConfirmed: false})
   }
 
   componentDidMount() {
     let id = this.props.params.id;
     this.fetchEventData(id)
   }
+
 
   fetchEventData(id){
   fetch(`/api/v1/users/${id}`)
@@ -71,10 +75,20 @@ class DashboardContainer extends Component {
   render() {
     let company
     let addCompany
-    if (this.state.company) {
+    if (this.state.company.name != "No Company") {
       company = this.state.company.name
     } else {
       addCompany = "Add Company"
+    }
+
+    let buttonConfirmedStyle
+    let buttonPendingStyle
+    if (this.state.buttonConfirmed) {
+      buttonConfirmedStyle = "button small radius"
+      buttonPendingStyle = "button small radius not-clicked"
+    } else {
+      buttonConfirmedStyle = "button small radius not-clicked"
+      buttonPendingStyle = "button small radius"
     }
 
     return(
@@ -117,8 +131,8 @@ class DashboardContainer extends Component {
           </div>
           <div className="cell small-8">
             <div className="">
-              <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
-              <button className="button small radius" style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
+              <button className={buttonConfirmedStyle} style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
+              <button className={buttonPendingStyle} style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
             </div>
             <div id="event-container-scroll">
               <EventsContainer events={this.state.show}/>

@@ -1,4 +1,5 @@
 $primary-color: #11AAB7;
+$field-gray-color: #5C5C5C;
 
 .primary {
   color: $primary-color;
@@ -7,7 +8,7 @@ $primary-color: #11AAB7;
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #5C5C5C;
+  color: $field-gray-color;
 }
 
 .weight1 {
