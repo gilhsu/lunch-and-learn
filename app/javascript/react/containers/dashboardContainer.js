@@ -70,7 +70,7 @@ class DashboardContainer extends Component {
         company: body.company
       })
     })
-}
+  }
 
   render() {
     let company

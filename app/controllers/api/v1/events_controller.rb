@@ -1,6 +1,13 @@
 class Api::V1::EventsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
+  def edit
+    event = Event.find(params[:id])
+    user = event.user
+    company = user.company
+
+    render json: {event: event, user: user, company: company}
+  end
 
   def create
     event = Event.new(event_params)

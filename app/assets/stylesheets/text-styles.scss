@@ -5,6 +5,10 @@ $field-gray-color: #5C5C5C;
   color: $primary-color;
 }
 
+.field-gray {
+  color: $field-gray-color;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
