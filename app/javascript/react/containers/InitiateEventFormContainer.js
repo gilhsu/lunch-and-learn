@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router'
-import NameField from '../components/NameField'
-import EmailField from '../components/EmailField'
-import DescriptionField from '../components/DescriptionField'
-import CompanyField from '../components/CompanyField'
+import TextField from '../components/TextField'
 
 class InitiateEventFormContainer extends Component {
   constructor(props) {
@@ -12,7 +9,7 @@ class InitiateEventFormContainer extends Component {
       name: "",
       email: "",
       description: "",
-      client_company: ""
+      clientCompany: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -28,7 +25,7 @@ class InitiateEventFormContainer extends Component {
       name: this.state.name,
       email: this.state.email,
       description: this.state.description,
-      client_company: this.state.client_company
+      clientCompany: this.state.clientCompany
     }
     this.postEvent(formPayload)
     this.setState({name: "", email: "", description: "", client_company: ""})
@@ -36,10 +33,10 @@ class InitiateEventFormContainer extends Component {
 
 
 
-  postEvent(event){
+  postEvent(formPayload){
     fetch(`/api/v1/events/`, {
       method: 'POST',
-      body: JSON.stringify(event),
+      body: JSON.stringify(formPayload),
       credentials: 'same-origin',
       headers:{
         'Accept' : 'application/json',
@@ -70,29 +67,33 @@ class InitiateEventFormContainer extends Component {
           <div className="text1 weight7">New Event Form</div>
           <br/>
           <form onSubmit={this.handleSubmit} action='/'>
-            <NameField
+            <TextField
               content={this.state.name}
               label="Lunch&Learn Event Name"
               name="name"
               passOnChange={this.handleChange}
+              required="true"
             />
-          <CompanyField
-              content={this.state.client_company}
+            <TextField
+              content={this.state.clientCompany}
               label="Presentee Company Name"
-              name="client_company"
+              name="clientCompany"
               passOnChange={this.handleChange}
+              required="true"
             />
-            <EmailField
+            <TextField
                 content={this.state.email}
                 label="Client Email"
                 name="email"
                 passOnChange={this.handleChange}
+                required="true"
               />
-            <DescriptionField
+            <TextField
                 content={this.state.description}
                 label="Event Description"
                 name="description"
                 passOnChange={this.handleChange}
+                required="true"
               />
             <br/>
             <input className="button radius submit" type='submit' value='Submit'></input><br/>

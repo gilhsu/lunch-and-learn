@@ -11,11 +11,11 @@ class EventsContainer extends Component {
 
 
   render() {
-
     let events = this.props.events.map(event => {
       return(
         <EventTile
           key={event.id}
+          id={event.id}
           name={event.name}
           email={event.email}
           company={event.client_company}

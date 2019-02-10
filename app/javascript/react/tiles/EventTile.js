@@ -24,6 +24,9 @@ const EventTile = (props) => {
       <div className="text2 weight3">
         Sent To: {props.email}
       </div>
+      <a href={"/events/" + props.id + "/edit"} className="text3 weight7">
+        Edit Invitation
+      </a>
     </div>
   );
 }

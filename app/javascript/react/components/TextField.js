@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CompanyField = (props) => {
+const TextField = (props) => {
 
 
   return (
@@ -9,10 +9,12 @@ const CompanyField = (props) => {
         name={props.name}
         type='text'
         value={props.content}
+        placeholder={props.placeholder}
         onChange={props.passOnChange}
+        required={props.required}
       />
     </label>
   );
 }
 
-export default CompanyField;
+export default TextField;
