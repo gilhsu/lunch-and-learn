@@ -99,16 +99,17 @@ class DashboardContainer extends Component {
           <div className="cell small-4 vertical-line">
             <div className="">
               <div className="grid-x small-12 align-center horizontal-line" style={{marginTop: '10px'}}>
-                <div className="cell small-4">
+                <div className="cell small-4 text-right">
                   <img src={this.state.user_photo} id="dashboard-photo"></img>
                 </div>
-                <div className="cell small-8" style={{padding: '10px 0px 0px 5px'}}>
+                <div className="cell small-8" style={{padding: '0px 0px 0px 20px'}}>
                   <div className="text2 weight5">
                     {this.state.user.first_name} {this.state.user.last_name}
                   </div>
                   <div className="text4 weight7 primary">
                     {company}
-                    <a href='/company/new/' className="text4 weight7 primary">{addCompany}</a>
+                    <a href='/company/new/' className="text4 weight7 primary">{addCompany}</a><br/>
+                    <a href={'/users/' + this.state.user.id + '/edit'} className="text4 weight7 primary">Edit Profile</a>
                   </div>
                 </div>
               </div>
