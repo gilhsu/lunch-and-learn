@@ -1,3 +1,12 @@
+.button {
+  font-weight: 400;
+}
+
+button.radius, .button.radius {
+    border-radius: 5px; }
+  button.round, .button.round {
+    border-radius: 1000px; }
+
 .not-clicked {
   background-color: #a0a0a0;
 }

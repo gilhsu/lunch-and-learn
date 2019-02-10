@@ -1,9 +1,5 @@
 $line-color: #d1d1d1;
 
-.button {
-  font-weight: 400;
-}
-
 #hero{
   height: 94vh;
   display: flex;
@@ -48,6 +44,19 @@ li #top-bar-button {
   color: #11AAB7;
 }
 
+#top-bar-button-dashboard {
+  margin-right: 20px;
+  margin-top: 6px;
+  width: 8rem;
+  height: 1.7rem;
+  line-height: 0;
+  border-color: #11AAB7;
+  border-style: solid;
+  border-width: 1.4px;
+  background-color: white;
+  color: #11AAB7;
+}
+
 #top-bar-button-outline:hover {
   background-color: #d3e9ff;
 }
@@ -73,11 +82,6 @@ li #top-bar-button {
   font-weight: 500;
   padding: 20px;
 }
-
-button.radius, .button.radius {
-    border-radius: 5px; }
-  button.round, .button.round {
-    border-radius: 1000px; }
 
 .form {
   margin-top: 50px;
@@ -114,5 +118,5 @@ button.radius, .button.radius {
 
 #dashboard-photo {
   height: 80px;
-  border-radius: 1000px;
+  border-radius: 10px;
 }

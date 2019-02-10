@@ -12,5 +12,4 @@ class Api::V1::UsersController < ApplicationController
     pending = pending.order(created_at: :asc)
     render json: {confirmed: confirmed, pending: pending, user: user, company: company}
   end
-
 end
