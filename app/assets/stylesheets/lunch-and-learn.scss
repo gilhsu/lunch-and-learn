@@ -1,5 +1,9 @@
 $line-color: #d1d1d1;
 
+html, body {
+  height: 100%
+}
+
 #hero{
   height: 94vh;
   display: flex;
@@ -19,6 +23,20 @@ $line-color: #d1d1d1;
 #hero-description {
   letter-spacing: '2px';
   margin-top: 5px;
+}
+
+#login-background {
+  display: flex;
+  background: image-url("Form-Background-Pizza.jpg");
+  background-position: top;
+  background-size: cover;
+}
+
+#signup-background {
+  display: flex;
+  background: image-url("Form-Background-Salad.jpg");
+  background-position: top;
+  background-size: cover;
 }
 
 #top-bar-button {

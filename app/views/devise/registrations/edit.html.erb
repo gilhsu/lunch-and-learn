@@ -1,66 +1,72 @@
 <div class='grid-x grid-margin-x align-center'>
-  <div class="form cell small-5">
-    <div class="text1 weight7">Edit Account</div>
-    <br/>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
+  <div class="cell small-6" id="signup-background">
+  </div>
+  <div class="form cell small-6 grid-x grid-margin-x">
+    <div class="small-11" style="padding-left: 35px;">
+      <div class="text1 weight7">
+        Edit Account
       </div>
+      <br/>
 
-      <div class="field">
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
 
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <div class="field">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
-      <% end %>
+        <div class="field">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password, 'New Password' %>
-        <% if @minimum_password_length %>
-          <em><%= @minimum_password_length %> characters minimum</em>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
         <% end %>
-        <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, 'New Password Confirmation' %>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="field">
+          <%= f.label :password, 'New Password' %>
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+          <i>(leave blank if you don't want to change it)</i>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
-        <%= f.password_field :current_password, autocomplete: "current-password" %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation, 'New Password Confirmation' %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
+        <div class="field">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
+
+        <br/>
+
+        <div class="field">
+          <%= f.label :profile_photo, 'Profile Photo' %>
+          <%= f.file_field :profile_photo %>
+        </div>
+
+        <br/>
+
+        <div class="actions">
+          <%= f.submit "Update", :class => 'button radius' %>
+        </div>
+      <% end %>
       <br/>
 
-      <div class="field">
-        <%= f.label :profile_photo, 'Profile Photo' %>
-        <%= f.file_field :profile_photo %>
+        <div class='text3 weight3'>Unhappy with Lunch&Learn?</div>
+        <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button radius delete' %>
       </div>
-
-      <br/>
-
-      <div class="actions">
-        <%= f.submit "Update", :class => 'button radius' %>
-      </div>
-    <% end %>
-    <br/>
-
-      <div class='text3 weight3'>Unhappy with Lunch&Learn?</div>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'button radius delete' %>
     </div>
   </div>
 </div>
