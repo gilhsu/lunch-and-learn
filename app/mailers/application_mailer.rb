@@ -1,3 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "\"Lunch and Learn\" <no-reply@welunchandlearn.com>"
+  default from: "<no-reply@welunchandlearn.com>"
 end
