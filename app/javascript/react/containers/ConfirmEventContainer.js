@@ -41,36 +41,6 @@ class ConfirmEventContainer extends Component {
     })
   }
 
-  // pass this handleSubmit method down to EventDetailsFormContainer as a prop. Include postEvent method.
-  handleSubmit(event) {
-
-  }
-
-  postEvent(event){
-    fetch(`/api/v1/events/!!!update!!!`, {
-      method: 'POST',
-      body: JSON.stringify(event),
-      credentials: 'same-origin',
-      headers:{
-        'Accept' : 'application/json',
-        'Content-Type' : 'application/json'
-        }
-      })
-      .then(response => {
-        if(response.ok){
-          return response
-        } else {
-          let errorMessage= `${response.status} (${response.statusText})`, error = new Error(errorMessage)
-          throw(error)
-        }
-      })
-      .then(response => response.json())
-      .then(body => {
-        debugger
-        return location.href=`/users/${body.user_id}`
-      })
-    }
-
 
   render() {
     let userName = `${this.state.user.first_name} ${this.state.user.last_name}`
@@ -87,7 +57,8 @@ class ConfirmEventContainer extends Component {
           </div>
           <div className="cell small-8 overflow-hidden">
             <EventDetailsFormContainer
-              handleSubmit = {this.handleSubmit}
+              id={this.props.params.id}
+              handleSubmit={this.handleSubmit}
             />
           </div>
         </div>

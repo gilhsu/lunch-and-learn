@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router'
+import { withRouter } from 'react-router-dom'
 import DayPicker from 'react-day-picker';
 import TextField from '../components/TextField'
 import StatePicker from '../components/StatePicker'
@@ -51,23 +52,24 @@ class EventDetailsFormContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    debugger
     let formPayload = {
-      selectedDay: this.state.selectedDay,
-      time: this.state.time,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      email: this.state.email,
-      phone: this.state.phone,
-      address: this.state.address,
-      suite: this.state.suite,
-      city: this.state.city,
-      state: this.state.state,
-      zip: this.state.zip,
-      foodOne: this.state.foodOne,
-      foodTwo: this.state.foodTwo,
-      vegetarian: this.state.vegetarian,
-      notes: this.state.notes
+      event: {
+        date: this.state.selectedDay,
+        time: this.state.time,
+        contact_first_name: this.state.firstName,
+        contact_last_name: this.state.lastName,
+        contact_email: this.state.contactEmail,
+        contact_phone: this.state.phone,
+        address: this.state.address,
+        suite: this.state.suite,
+        city: this.state.city,
+        state: this.state.state,
+        zip: this.state.zip,
+        food_one: this.state.foodOne,
+        food_two: this.state.foodTwo,
+        vegetarian: this.state.vegetarian,
+        notes: this.state.notes
+      }
     }
     this.postEvent(formPayload)
     this.setState({
@@ -94,10 +96,11 @@ class EventDetailsFormContainer extends Component {
     this.setState({time: event.target.value});
   }
 
-  postEvent(event){
-    fetch(`/api/v1/events/`, {
-      method: 'POST',
-      body: JSON.stringify(event),
+  postEvent(formPayload){
+    let id = this.props.id
+    fetch(`/api/v1/events/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(formPayload),
       credentials: 'same-origin',
       headers:{
         'Accept' : 'application/json',
@@ -114,7 +117,6 @@ class EventDetailsFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
         return location.href=`/users/${body.user_id}`
       })
     }
