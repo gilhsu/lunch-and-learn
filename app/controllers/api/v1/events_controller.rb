@@ -10,13 +10,16 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
-    event.user_id = current_user.id
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
+    @user = User.find(current_user.id)
 
-    if event.save
-      render json: event
+    if @event.save
+      ConfirmMailer.presenter_invite(@user, @event).deliver_now
+      ConfirmMailer.presentee_invite(@user, @event).deliver_now
+      render json: @event
     else
-      render json: {error: review.errors.full_messages}, status: :unprocessable_entity
+      render json: {error: @event.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
