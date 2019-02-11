@@ -25,10 +25,10 @@ class InitiateEventFormContainer extends Component {
       name: this.state.name,
       email: this.state.email,
       description: this.state.description,
-      clientCompany: this.state.clientCompany
+      client_company: this.state.clientCompany
     }
     this.postEvent(formPayload)
-    this.setState({name: "", email: "", description: "", client_company: ""})
+    this.setState({name: "", email: "", description: "", clientCompany: ""})
   }
 
 
