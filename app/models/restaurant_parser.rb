@@ -33,27 +33,35 @@ class RestaurantParser
     }
 
     response = HTTP.auth("Bearer #{ENV["YELP_KEY"]}").get(url, params: params)
-    restaurant_data = response.parse["businesses"].each do |item|
-      new_restaurant = Restaurant.new(
-        event: event,
-        name: item["name"],
-        image_url: item["image_url"],
-        categories: item["categories"],
-        rating: item["rating"],
-        address1: item["location"]["address1"],
-        city: item["location"]["city"],
-        zip_code: item["location"]["zip_code"],
-        country: item["location"]["country"],
-        state: item["location"]["state"],
-        display_phone: item["display_phone"],
-        price: item["price"],
-        review_count: item["review_count"],
-        distance: item["distance"]
-      )
-      @data << new_restaurant
-
+    @data = response.parse
+    response.parse["businesses"].each do |restaurant|
+      if Restaurant.find_by(name: restaurant["name"])
+        restaurant = Restaurant.find_by(name: restaurant["name"])
+        new_caterer = Caterer.new(event: event, restaurant: restaurant)
+        if new_caterer.save!
+        end
+      else
+        new_restaurant = Restaurant.new(
+          name: restaurant["name"],
+          image_url: restaurant["image_url"],
+          categories: restaurant["categories"],
+          rating: restaurant["rating"],
+          address1: restaurant["location"]["address1"],
+          city: restaurant["location"]["city"],
+          zip_code: restaurant["location"]["zip_code"],
+          country: restaurant["location"]["country"],
+          state: restaurant["location"]["state"],
+          display_phone: restaurant["display_phone"],
+          price: restaurant["price"],
+          review_count: restaurant["review_count"],
+          distance: restaurant["distance"]
+        )
+        if new_restaurant.save
+          new_caterer = Caterer.new(event: event, restaurant: new_restaurant)
+          if new_caterer.save!
+          end
+        end
+      end
     end
-    @data.map(&:save)
-    return @data
   end
 end

@@ -34,7 +34,6 @@ class EventDetailsFormContainer extends Component {
     this.handleSelect = this.handleSelect.bind(this)
     this.clearState = this.clearState.bind(this)
     this.yelpCall = this.yelpCall.bind(this)
-    // this.handleYelpFetch = this.handleYelpFetch.bind(this)
   }
 
   componentDidMount() {
@@ -83,10 +82,8 @@ class EventDetailsFormContainer extends Component {
         notes: this.state.notes
       }
     }
-    debugger
-    this.yelpCall(url, formPayload);
-    debugger
 
+    this.yelpCall(url, formPayload);
 
     // this.postEvent(formPayload)
     this.clearState()
@@ -113,8 +110,6 @@ class EventDetailsFormContainer extends Component {
     })
   }
 
-
-
   handleSelect(event) {
     event.preventDefault()
     this.setState({time: event.target.value});
@@ -132,7 +127,6 @@ class EventDetailsFormContainer extends Component {
         }
       })
       .then(response => {
-        debugger
         if(response.ok){
           return response
         } else {
@@ -147,7 +141,6 @@ class EventDetailsFormContainer extends Component {
     }
 
   yelpCall(url, formPayload) {
-    debugger
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -166,14 +159,6 @@ class EventDetailsFormContainer extends Component {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
-
-  // handleYelpFetch(event) {
-  //   event.preventDefault();
-  //   let url = `/api/v1/restaurants/search?location=${
-  //     this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
-  //   this.yelpCall(url);
-  // }
 
 
   render() {

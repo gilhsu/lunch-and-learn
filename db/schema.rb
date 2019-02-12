@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_200300) do
+ActiveRecord::Schema.define(version: 2019_02_12_215741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caterers", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_caterers_on_event_id"
+    t.index ["restaurant_id"], name: "index_caterers_on_restaurant_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
@@ -51,7 +60,6 @@ ActiveRecord::Schema.define(version: 2019_02_12_200300) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.bigint "event_id", null: false
     t.string "name", null: false
     t.string "image_url", null: false
     t.string "categories", null: false, array: true
@@ -65,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_02_12_200300) do
     t.float "distance", null: false
     t.string "price", null: false
     t.integer "review_count", null: false
-    t.index ["event_id"], name: "index_restaurants_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|

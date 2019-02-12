@@ -12,5 +12,6 @@ class Restaurant < ApplicationRecord
   validates :distance, presence: true
   validates :price, presence: true
   validates :review_count, presence: true
-  belongs_to :event
+  has_many :caterers
+  has_many :events, through: :caterers
 end

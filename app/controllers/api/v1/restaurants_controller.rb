@@ -8,6 +8,7 @@ class Api::V1::RestaurantsController < ApplicationController
   # location = "boston, ma"
   # price = 2
   restaurant_parser.search(categories, location, event)
+  binding.pry
   # session[:yelp_data] = restaurant_parser.data
   render json: { data: restaurant_parser.data }
  end
