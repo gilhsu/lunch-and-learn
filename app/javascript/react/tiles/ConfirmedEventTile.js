@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventTile = (props) => {
+const ConfirmedEventTile = (props) => {
   var recievedDate = new Date(props.date);
   var day= recievedDate.getDate();
   var month= recievedDate.getMonth();
@@ -9,8 +9,8 @@ const EventTile = (props) => {
 
   return (
     <div className="horizontal-line" id="event-tile">
-      <div className="text3 weight5 primary">
-        Event Pending
+      <div className="text3 weight5">
+        Event Confirmed
       </div>
       <div className="text3 weight3">
         Sent On: {convertedDate.toDateString()}
@@ -31,4 +31,4 @@ const EventTile = (props) => {
   );
 }
 
-export default EventTile;
+export default ConfirmedEventTile;

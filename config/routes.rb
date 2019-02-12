@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:show]
       resources :events, only: [:edit, :create, :update]
+      get "/restaurants/search", to: "restaurants#search"
     end
   end
 end

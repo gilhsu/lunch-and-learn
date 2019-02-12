@@ -3,4 +3,5 @@ class Event < ApplicationRecord
   validates :email, presence: true
   validates :description, presence: true
   belongs_to :user
+  has_many :restaurants
 end
