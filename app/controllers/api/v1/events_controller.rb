@@ -1,6 +1,14 @@
 class Api::V1::EventsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
+  def show
+    event = Event.find(params[:id])
+    restaurants = event.restaurants.limit(3)
+    # binding.pry
+
+    render json: {restaurants: restaurants}
+  end
+
   def edit
     event = Event.find(params[:id])
     user = event.user

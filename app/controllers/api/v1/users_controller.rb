@@ -4,12 +4,14 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = current_user
     company = user.company
-    events = Event.where(user_id: params[:id])
-    events = events.order(created_at: :asc)
-    confirmed = events.where(confirmed: true)
-    confirmed = confirmed.order(created_at: :asc)
-    pending = events.where(confirmed: false)
-    pending = pending.order(created_at: :asc)
+    events = Event.where(user_id: params[:id]).order(created_at: :asc)
+    # events = events.order(created_at: :asc)
+    confirmed = events.where(confirmed: true).order(created_at: :asc)
+    # binding.pry
+    # confirmed = confirmed.order(created_at: :asc)
+    pending = events.where(confirmed: false).order(created_at: :asc)
+    # pending = pending.order(created_at: :asc)
+
 
     # event_restaurants = []
     # confirmed_with_restaurants = confirmed.each do |c|
@@ -25,8 +27,19 @@ class Api::V1::UsersController < ApplicationController
     # confirmed_with_restaurants = confirmed.each do |c|
     #   c.yelp_restaurants = c.restaurants
     # end
+    # binding.pry
 
-    render json: {confirmed: confirmed, pending: pending, user: user, company: company}
+    render json: {
+      confirmed: serialized_events(confirmed),
+      pending: pending,
+      user: user,
+      company: company
+    }
   end
 
+  private
+
+  def serialized_events(events)
+    ActiveModel::Serializer::CollectionSerializer.new(events, serializer: ConfirmedEventsSerializer)
+  end
 end

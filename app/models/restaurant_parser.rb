@@ -13,7 +13,7 @@ class RestaurantParser
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"
 
-  DEFAULT_BUSINESS_ID = "yelp-san-francisco"
+  DEFAULT_BUSINESS_ID = "yelp-boston"
   DEFAULT_TERM = "italian"
   DEFAULT_LOCATION = "Boston, MA"
   DEFAULT_PRICE = 2
@@ -34,7 +34,6 @@ class RestaurantParser
 
     response = HTTP.auth("Bearer #{ENV["YELP_KEY"]}").get(url, params: params)
     restaurant_data = response.parse["businesses"].each do |item|
-
       new_restaurant = Restaurant.new(
         event: event,
         name: item["name"],

@@ -10,7 +10,8 @@ class EventsContainer extends Component {
     }
   }
 
-  render() { 
+
+  render() {
     let events
     if (this.props.events.length > 0) {
       if (this.props.events[0].confirmed === true) {

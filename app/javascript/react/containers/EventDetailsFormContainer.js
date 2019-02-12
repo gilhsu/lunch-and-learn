@@ -34,6 +34,7 @@ class EventDetailsFormContainer extends Component {
     this.handleSelect = this.handleSelect.bind(this)
     this.clearState = this.clearState.bind(this)
     this.yelpCall = this.yelpCall.bind(this)
+    // this.handleYelpFetch = this.handleYelpFetch.bind(this)
   }
 
   componentDidMount() {
@@ -57,10 +58,11 @@ class EventDetailsFormContainer extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault()
-    this.handleYelpFetch(event)
-    debugger
+
+    let url = `/api/v1/restaurants/search?location=${
+      this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
 
     let formPayload = {
       event: {
@@ -81,7 +83,12 @@ class EventDetailsFormContainer extends Component {
         notes: this.state.notes
       }
     }
-    this.postEvent(formPayload)
+    debugger
+    this.yelpCall(url, formPayload);
+    debugger
+
+
+    // this.postEvent(formPayload)
     this.clearState()
   }
 
@@ -125,6 +132,7 @@ class EventDetailsFormContainer extends Component {
         }
       })
       .then(response => {
+        debugger
         if(response.ok){
           return response
         } else {
@@ -138,7 +146,7 @@ class EventDetailsFormContainer extends Component {
       })
     }
 
-  yelpCall(url) {
+  yelpCall(url, formPayload) {
     debugger
     fetch(url)
       .then(response => {
@@ -153,19 +161,19 @@ class EventDetailsFormContainer extends Component {
       .then(response => response.json())
       .then(body => {
         debugger
-        this.setState({ restaurants: body });
+        this.setState({ restaurants: body.data });
+        this.postEvent(formPayload)
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
 
-  handleYelpFetch(event) {
-    event.preventDefault();
-    let url = `/api/v1/restaurants/search?location=${
-      this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
-    debugger
-    this.yelpCall(url);
-  }
+  // handleYelpFetch(event) {
+  //   event.preventDefault();
+  //   let url = `/api/v1/restaurants/search?location=${
+  //     this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
+  //   this.yelpCall(url);
+  // }
 
 
   render() {
