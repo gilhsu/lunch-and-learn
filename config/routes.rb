@@ -5,12 +5,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :edit]
   resources :events, only: [:show, :new, :edit]
+  resources :caterers, only: [:create]
 
 
   namespace :api do
     namespace :v1 do
       resources :users, only: [:show]
-      resources :events, only: [:edit, :create, :update]
+      resources :events, only: [:show, :edit, :create, :update]
+      get "/restaurants/search", to: "restaurants#search"
     end
   end
 end

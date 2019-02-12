@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventTile = (props) => {
+const PendingEventTile = (props) => {
   var recievedDate = new Date(props.date);
   var day= recievedDate.getDate();
   var month= recievedDate.getMonth();
@@ -31,4 +31,4 @@ const EventTile = (props) => {
   );
 }
 
-export default EventTile;
+export default PendingEventTile;

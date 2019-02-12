@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_022029) do
+ActiveRecord::Schema.define(version: 2019_02_12_215741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caterers", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_caterers_on_event_id"
+    t.index ["restaurant_id"], name: "index_caterers_on_restaurant_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +57,22 @@ ActiveRecord::Schema.define(version: 2019_02_10_022029) do
     t.string "time"
     t.string "vegetarian"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.string "categories", null: false, array: true
+    t.float "rating", null: false
+    t.string "address1", null: false
+    t.string "city", null: false
+    t.string "zip_code", null: false
+    t.string "country", null: false
+    t.string "state", null: false
+    t.string "display_phone", null: false
+    t.float "distance", null: false
+    t.string "price", null: false
+    t.integer "review_count", null: false
   end
 
   create_table "users", force: :cascade do |t|

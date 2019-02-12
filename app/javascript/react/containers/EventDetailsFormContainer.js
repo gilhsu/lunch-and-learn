@@ -12,6 +12,7 @@ class EventDetailsFormContainer extends Component {
     super(props);
     this.state = {
       selectedDay: undefined,
+      event_id: 1,
       time: "12:00PM",
       firstName: "",
       lastName: "",
@@ -31,6 +32,12 @@ class EventDetailsFormContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSelect = this.handleSelect.bind(this)
+    this.clearState = this.clearState.bind(this)
+    this.yelpCall = this.yelpCall.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({event_id: this.props.id})
   }
 
   handleDayClick(day, { selected, disabled }) {
@@ -50,8 +57,12 @@ class EventDetailsFormContainer extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault()
+
+    let url = `/api/v1/restaurants/search?location=${
+      this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
+
     let formPayload = {
       event: {
         date: this.state.selectedDay,
@@ -71,9 +82,17 @@ class EventDetailsFormContainer extends Component {
         notes: this.state.notes
       }
     }
-    this.postEvent(formPayload)
+
+    this.yelpCall(url, formPayload);
+
+    // this.postEvent(formPayload)
+    this.clearState()
+  }
+
+  clearState() {
     this.setState({
       selectedDay: undefined,
+      event_id: 1,
       time: "12:00PM",
       firstName: "",
       lastName: "",
@@ -120,6 +139,27 @@ class EventDetailsFormContainer extends Component {
         return location.href=`/users/${body.user_id}`
       })
     }
+
+  yelpCall(url, formPayload) {
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        debugger
+        this.setState({ restaurants: body.data });
+        this.postEvent(formPayload)
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
 
   render() {
     console.log(this.state)

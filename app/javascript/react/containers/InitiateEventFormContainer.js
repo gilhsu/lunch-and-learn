@@ -53,7 +53,6 @@ class InitiateEventFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
         return location.href=`/users/${body.user_id}`
       })
     }
