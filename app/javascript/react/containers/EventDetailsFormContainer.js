@@ -11,12 +11,11 @@ class EventDetailsFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDay: undefined,
-      event_id: 1,
+      selectedDay: new Date("2019-03-04"),
       time: "12:00PM",
       firstName: "",
       lastName: "",
-      email: "",
+      contactEmail: "",
       phone: "",
       address: "",
       suite: "",
@@ -26,7 +25,7 @@ class EventDetailsFormContainer extends Component {
       foodOne: "default",
       foodTwo: "default",
       vegetarian: "default",
-      notes: "",
+      notes: ""
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -34,11 +33,47 @@ class EventDetailsFormContainer extends Component {
     this.handleSelect = this.handleSelect.bind(this)
     this.clearState = this.clearState.bind(this)
     this.yelpCall = this.yelpCall.bind(this)
+    this.fetchEventData = this.fetchEventData.bind(this)
   }
 
   componentDidMount() {
-    this.setState({event_id: this.props.id})
+    let id = this.props.id
+    this.fetchEventData(id)
   }
+
+  fetchEventData(id){
+  fetch(`/api/v1/events/${id}`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage);
+        throw error;
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let bodyObject = {
+        selectedDay: new Date(body.date),
+        time: body.event.time,
+        firstName: body.event.contact_first_name,
+        lastName: body.event.contact_last_name,
+        contactEmail: body.event.contact_email,
+        phone: body.event.contact_phone,
+        address: body.event.address,
+        suite: body.event.suite,
+        city: body.event.city,
+        state: body.event.state,
+        zip: body.event.zip,
+        foodOne: body.event.food_one,
+        foodTwo: body.event.food_two,
+        vegetarian: body.event.vegetarian,
+        notes: body.event.notes
+      }
+      this.setState(bodyObject)
+    })
+  }
+
 
   handleDayClick(day, { selected, disabled }) {
     if (disabled) {
@@ -61,7 +96,7 @@ class EventDetailsFormContainer extends Component {
     event.preventDefault()
 
     let url = `/api/v1/restaurants/search?location=${
-      this.state.zip}&categories=${this.state.foodOne}&event=${this.state.event_id}`;
+      this.state.zip}&food1=${this.state.foodOne}&food2=${this.state.foodTwo}&event=${this.props.id}`;
 
     let formPayload = {
       event: {
@@ -96,7 +131,7 @@ class EventDetailsFormContainer extends Component {
       time: "12:00PM",
       firstName: "",
       lastName: "",
-      email: "",
+      contactEmail: "",
       phone: "",
       address: "",
       suite: "",
@@ -153,8 +188,6 @@ class EventDetailsFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        debugger
-        this.setState({ restaurants: body.data });
         this.postEvent(formPayload)
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -163,7 +196,6 @@ class EventDetailsFormContainer extends Component {
 
   render() {
     console.log(this.state)
-
     return(
       <div className='grid-x grid-margin-x' style={{paddingRight: '20px'}}>
         <div className="cell small-4 text-center">
@@ -226,9 +258,9 @@ class EventDetailsFormContainer extends Component {
                     <div className="grid-x small-12">
                       <div className="small-8">
                         <TextField
-                          content={this.state.email}
+                          content={this.state.contactEmail}
                           placeholder="Email"
-                          name="email"
+                          name="contactEmail"
                           passOnChange={this.handleChange}
                           required="true"
                         />

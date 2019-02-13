@@ -45,11 +45,11 @@ class DashboardContainer extends Component {
 
   componentDidMount() {
     let id = this.props.params.id;
-    this.fetchEventData(id)
+    this.fetchUserData(id)
   }
 
 
-  fetchEventData(id){
+  fetchUserData(id){
   fetch(`/api/v1/users/${id}`)
     .then(response => {
       if (response.ok) {

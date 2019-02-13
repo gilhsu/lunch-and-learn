@@ -14,32 +14,151 @@ user1 = User.create(email: "gil@gmail.com", password: "password", rep: true, fir
 img = File.open(File.join(Rails.root, '/app/assets/images/0.jpeg'))
 User.find(1).update(profile_photo: img)
 
-
-event1 = Event.create(
+confirmedEvent1 = Event.create(
+  user_id: 1,
+  client_company: "Fusion Design Consultants",
+  email: "elizabeth@fusion.com",
+  name: "Strongest Fabrics for Office Funiture",
+  description: "Learn about a new line of ultra-durable funiture fabrics. They're beautiful AND strong!",
+  date: DateTime.strptime("03/04/2019 12:00", "%m/%d/%Y %H:%M"),
+  contact_first_name: "Elizabeth",
+  contact_last_name: "Caron",
+  contact_email: "liz@elkus.com",
+  contact_phone: "617-123-4567",
+  address: "300 Summer Street",
+  suite: "15",
+  city: "Boston",
+  state: "MA",
+  zip: "02210",
+  food_one: "pizza",
+  food_two: "salad",
+  notes: "We have our own entrance off Summer St. Please use that instead of the mail building entrance. We have one nut allergy.",
+  confirmed: true,
+  time: "12:00PM",
+  vegetarian: "3",
+)
+confirmedEvent2 = Event.create(
   user_id: 1,
   client_company: "Dyer Brown Architects",
   email: "rachel@dyerbrown.com",
   name: "2019 Office Furniture Lines",
   description: "Come see our newest furniture lines at our showroom!",
+  date: DateTime.strptime("03/01/2019 12:00", "%m/%d/%Y %H:%M"),
+  contact_first_name: "Rachel",
+  contact_last_name: "Woodhouse",
+  contact_email: "rachel@dyerbrown.com",
+  contact_phone: "617-123-4567",
+  address: "1 Winthrop Square",
+  suite: "300",
+  city: "Boston",
+  state: "MA",
+  zip: "02110",
+  food_one: "sandwiches",
+  food_two: "salad",
+  notes: "Parking in the back. Talk to Hank at reception and he'll swipe you in.",
+  confirmed: true,
+  time: "12:00PM",
+  vegetarian: "2",
 )
-event2 = Event.create(
+confirmedEvent3 = Event.create(
   user_id: 1,
   client_company: "Eklus Manfredi",
   email: "jeff@elkus.com",
   name: "Open Office Design Charrette",
-  description: "Join us for an inspiring charrette with the best designers in the business."
+  description: "Join us for an inspiring charrette with the best designers in the business.",
+  date: DateTime.strptime("03/03/2019 12:00", "%m/%d/%Y %H:%M"),
+  contact_first_name: "Jeff",
+  contact_last_name: "Mulliken",
+  contact_email: "jeff@elkus.com",
+  contact_phone: "617-123-4567",
+  address: "30 Seaport Boulevard",
+  suite: "1200",
+  city: "Boston",
+  state: "MA",
+  zip: "02112",
+  food_one: "pizza",
+  food_two: "soup",
+  notes: "Please use the East entrance. Also please note that we have (1) peanut allergy and (2) shellfish allergies. Thanks!",
+  confirmed: true,
+  time: "12:30PM",
+  vegetarian: "1",
 )
-event3 = Event.create(
-  user_id: 1,
-  client_company: "Fusion Design Consultants",
-  email: "elizabeth@fusion.com",
-  name: "Strongest Fabrics for Office Funiture",
-  description: "Learn about a new line of ultra-durable funiture fabrics. They're beautiful AND strong!"
-)
-event4 = Event.create(
+pendingEvent1 = Event.create(
   user_id: 1,
   client_company: "Stantec",
   email: "jennifer@stantec.com",
   name: "Modern A/V Design for Offices",
   description: "This lunch and learn partners with Spectrum A/V to discuss the latest trends in office tech."
+)
+
+# for Event 1, Food Choice 1
+restaurant1 = Restaurant.create(
+  name: "Regina Pizzeria",
+  image_url: "https://s3-media4.fl.yelpcdn.com/bphoto/6_j2VgsFthPHf5TGxBhVLA/o.jpg",
+  categories: ["{\"alias\"=>\"pizza\", \"title\"=>\"Pizza\"}", "{\"alias\"=>\"italian\", \"title\"=>\"Italian\"}", "{\"alias\"=>\"wine_bars\", \"title\"=>\"Wine Bars\"}"],
+  rating: 4.0,
+  address1: "11 1/2 Thacher St",
+  city: "Boston",
+  zip_code: "02113",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 227-0765",
+  distance: 2608.8694646254,
+  price: "$$",
+  review_count: 1719
+)
+
+# for Event 1, Food Choice 1
+restaurant2 = Restaurant.create(
+  name: "Galleria Umberto",
+  image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/TMLkJ5Oh-eHuupb8BCRPSg/o.jpg",
+  categories: ["{\"alias\"=>\"pizza\", \"title\"=>\"Pizza\"}", "{\"alias\"=>\"italian\", \"title\"=>\"Italian\"}"],
+  rating: 4.5,
+  address1: "289 Hanover St",
+  city: "Boston",
+  zip_code: "02113",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 227-5709",
+  distance: 2323.15597603675,
+  price: "$",
+  review_count: 592
+)
+
+# for Event 1, Food Choice 1
+restaurant3 = Restaurant.create(
+  name: "Pastoral - Artisan Pizza, Kitchen & Bar",
+  image_url: "https://s3-media4.fl.yelpcdn.com/bphoto/JLbyHv19ZDgf-MJ53YQ6ug/o.jpg",
+  categories: ["{\"alias\"=>\"pizza\", \"title\"=>\"Pizza\"}", "{\"alias\"=>\"beerbar\", \"title\"=>\"Beer Bar\"}", "{\"alias\"=>\"cocktailbars\", \"title\"=>\"Cocktail Bars\"}"],
+  rating: 3.5,
+  address1: "345 Congress St",
+  city: "Boston",
+  zip_code: "02210",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 345-0005",
+  distance: 1225.74855975373,
+  price: "$$",
+  review_count: 407
+)
+
+# for Event 1, Food Choice 1
+caterer1 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant1,
+  selection: 1
+)
+
+# for Event 1, Food Choice 1
+caterer2 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant2,
+  selection: 1
+)
+
+# for Event 1, Food Choice 1
+caterer3 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant3,
+  selection: 1
 )
