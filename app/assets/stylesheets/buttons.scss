@@ -1,5 +1,9 @@
+$primary-color: #11AAB7;
+$secondary-color: #4A90E2;
+
 .button {
-  font-weight: 400;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 button.radius, .button.radius {
@@ -8,15 +12,15 @@ button.radius, .button.radius {
     border-radius: 1000px; }
 
 .button-outline {
-  border-color: #11AAB7;
+  border-color: $primary-color;
   border-style: solid;
   border-width: 1.4px;
   background-color: white;
-  color: #11AAB7;
+  color: $primary-color;
 }
 
 .button-outline:hover {
-  color: #11AAB7;
+  color: $primary-color;
   background-color: #d3e9ff;
 }
 
@@ -41,11 +45,11 @@ li #top-bar-button {
   width: 8rem;
   height: 1.7rem;
   line-height: 0;
-  border-color: #11AAB7;
+  border-color: $primary-color;
   border-style: solid;
   border-width: 1.4px;
   background-color: white;
-  color: #11AAB7;
+  color: $primary-color;
 }
 
 #top-bar-button-dashboard {
@@ -54,11 +58,11 @@ li #top-bar-button {
   width: 8rem;
   height: 1.7rem;
   line-height: 0;
-  border-color: #11AAB7;
+  border-color: $primary-color;
   border-style: solid;
   border-width: 1.4px;
   background-color: white;
-  color: #11AAB7;
+  color: $primary-color;
 }
 
 #top-bar-button-outline:hover {
