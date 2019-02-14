@@ -6,7 +6,7 @@ class ConfirmedEventsSerializer < ActiveModel::Serializer
     restaurants = []
     object.restaurants.each do |restaurant|
       restaurant.caterers.each do |caterer|
-        if caterer.selection == 1
+        if caterer.event_id == object.id && caterer.selection == 1
           restaurants << restaurant
         end
       end
@@ -18,7 +18,7 @@ class ConfirmedEventsSerializer < ActiveModel::Serializer
     restaurants = []
     object.restaurants.each do |restaurant|
       restaurant.caterers.each do |caterer|
-        if caterer.selection == 2
+        if caterer.event_id == object.id && caterer.selection == 2
           restaurants << restaurant
         end
       end

@@ -36,7 +36,6 @@ class RestaurantParser
     }
 
     response1 = HTTP.auth("Bearer #{ENV["YELP_KEY"]}").get(url, params: params1)
-
     response1.parse["businesses"].each do |restaurant|
       if Restaurant.find_by(name: restaurant["name"])
         restaurant = Restaurant.find_by(name: restaurant["name"])

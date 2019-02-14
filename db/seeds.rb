@@ -20,7 +20,7 @@ confirmedEvent1 = Event.create(
   email: "elizabeth@fusion.com",
   name: "Strongest Fabrics for Office Funiture",
   description: "Learn about a new line of ultra-durable funiture fabrics. They're beautiful AND strong!",
-  date: DateTime.strptime("03/04/2019 12:00", "%m/%d/%Y %H:%M"),
+  date: "2019-02-24",
   contact_first_name: "Elizabeth",
   contact_last_name: "Caron",
   contact_email: "liz@elkus.com",
@@ -66,7 +66,7 @@ confirmedEvent3 = Event.create(
   email: "jeff@elkus.com",
   name: "Open Office Design Charrette",
   description: "Join us for an inspiring charrette with the best designers in the business.",
-  date: DateTime.strptime("03/03/2019 12:00", "%m/%d/%Y %H:%M"),
+  date: "2019-03-04",
   contact_first_name: "Jeff",
   contact_last_name: "Mulliken",
   contact_email: "jeff@elkus.com",
@@ -193,6 +193,125 @@ restaurant6 = Restaurant.create(
   review_count: 906
 )
 
+# for Event 2, Food Choice 2
+restaurant7 = Restaurant.create(
+  name: "Piperi Mediterranean Grill",
+  image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/kw1SaJhwW7tU5EZOzQ29HQ/o.jpg",
+  categories: ["Mediterranean", "Salad", "Sandwiches"],
+  rating: 4.5,
+  address1: "1 Beacon St",
+  city: "Boston",
+  zip_code: "02108",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 227-7471",
+  distance: 636.084786273908,
+  price: "$",
+  review_count: 466
+)
+
+# for Event 2, Food Choice 2
+restaurant8 = Restaurant.create(
+  name: "Al Dente Restaurant",
+  image_url: "https://s3-media4.fl.yelpcdn.com/bphoto/Cjdaj6QQuAZx1HTMsduKhg/o.jpg",
+  categories: ["Italian", "Salad", "Seafood"],
+  rating: 4.0,
+  address1: "109 Salem St",
+  city: "Boston",
+  zip_code: "02113",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 523-0990",
+  distance: 664.785269552714,
+  price: "$$",
+  review_count: 990
+)
+
+# for Event 2, Food Choice 2
+restaurant9 = Restaurant.create(
+  name: "Panza",
+  image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/rh7bAJU7h4XnezVe3m2u6w/o.jpg",
+  categories: ["Italian", "Wine Bars", "Salad"],
+  rating: 4.0,
+  address1: "326 Hanover St",
+  city: "Boston",
+  zip_code: "02113",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 557-9248",
+  distance: 688.339467113361,
+  price: "$$",
+  review_count: 1199
+)
+
+# for Event 3, Food Choice 1
+restaurant10 = Restaurant.create(
+  name: "Viga Italian Eatery & Caterer",
+  image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/xsj8K1tPqdXIgKnG4UrUqQ/o.jpg",
+  categories: ["Pizza", "Italian"],
+  rating: 3.5,
+  address1: "275 Washington St",
+  city: "Boston",
+  zip_code: "02201",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 742-8442",
+  distance: 288.49413155303,
+  price: "$",
+  review_count: 79
+)
+
+# for Event 3, Food Choice 2
+restaurant11 = Restaurant.create(
+  name: "1000 Degrees Neapolitan Pizzeria",
+  image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/R9cMWfTjR4tqxuD23YpJ7w/o.jpg",
+  categories: ["Pizza"],
+  rating: 3.5,
+  address1: "45 Court St",
+  city: "Boston",
+  zip_code: "02108",
+  country: "US",
+  state: "MA",
+  display_phone: "(857) 772-7181",
+  distance: 119.940505143887,
+  price: "$$",
+  review_count: 35
+)
+
+# for Event 3, Food Choice 2
+restaurant12 = Restaurant.create(
+  name: "Freshii",
+  image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/AvL7awJPo4XDiPWTNqYycQ/o.jpg",
+  categories: ["Soup", "American (New)", "Breakfast & Brunch"],
+  rating: 3.5,
+  address1: "24 School St",
+  city: "Boston",
+  zip_code: "02108",
+  country: "US",
+  state: "MA",
+  display_phone: "(857) 233-2674",
+  distance: 283.967116415645,
+  price: "$",
+  review_count: 152
+)
+
+# for Event 3, Food Choice 2
+restaurant13 = Restaurant.create(
+  name: "Noodle Lab",
+  image_url: "https://s3-media3.fl.yelpcdn.com/bphoto/RKJzHiDJENGQ4AD8TnBwEA/o.jpg",
+  categories: ["Ramen", "Soup", "Noodles"],
+  rating: 3.5,
+  address1: "100 Hanover St",
+  city: "Boston",
+  zip_code: "02108",
+  country: "US",
+  state: "MA",
+  display_phone: "(857) 293-9775",
+  distance: 308.378587267959,
+  price: "$",
+  review_count: 62
+)
+
 # for Event 1, Food Choice 1
 caterer1 = Caterer.create(
   event: confirmedEvent1,
@@ -232,5 +351,82 @@ caterer5 = Caterer.create(
 caterer6 = Caterer.create(
   event: confirmedEvent1,
   restaurant: restaurant6,
+  selection: 2
+)
+
+# for Event 2, Food Choice 1
+caterer7 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant4,
+  selection: 1
+)
+
+# for Event 2, Food Choice 1
+caterer8 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant5,
+  selection: 1
+)
+
+# for Event 2, Food Choice 1
+caterer9 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant6,
+  selection: 1
+)
+
+# for Event 2, Food Choice 2
+caterer10 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant7,
+  selection: 2
+)
+
+# for Event 2, Food Choice 2
+caterer11 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant8,
+  selection: 2
+)
+
+# for Event 2, Food Choice 2
+caterer12 = Caterer.create(
+  event: confirmedEvent2,
+  restaurant: restaurant9,
+  selection: 2
+)
+
+# for Event 3, Food Choice 1
+caterer13 = Caterer.create(
+  event: confirmedEvent3,
+  restaurant: restaurant10,
+  selection: 1
+)
+
+# for Event 3, Food Choice 1
+caterer14 = Caterer.create(
+  event: confirmedEvent3,
+  restaurant: restaurant11,
+  selection: 1
+)
+
+# for Event 3, Food Choice 2
+caterer15 = Caterer.create(
+  event: confirmedEvent3,
+  restaurant: restaurant6,
+  selection: 2
+)
+
+# for Event 3, Food Choice 2
+caterer16 = Caterer.create(
+  event: confirmedEvent3,
+  restaurant: restaurant12,
+  selection: 2
+)
+
+# for Event 3, Food Choice 2
+caterer17 = Caterer.create(
+  event: confirmedEvent3,
+  restaurant: restaurant13,
   selection: 2
 )
