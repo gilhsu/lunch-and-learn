@@ -25,7 +25,8 @@ class EventsContainer extends Component {
               company={event.client_company}
               date={event.created_at}
               updated={event.updated_at}
-              restaurants={event.restaurants}
+              restaurants1={event.restaurants_one}
+              restaurants2={event.restaurants_two}
               />
           )
         })

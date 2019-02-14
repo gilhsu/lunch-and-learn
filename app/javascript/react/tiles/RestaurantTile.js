@@ -5,7 +5,7 @@ const RestaurantTile = (props) => {
 
   return (
     <div>
-      {props.name}
+      {props.name} - {props.phone}
     </div>
   );
 }

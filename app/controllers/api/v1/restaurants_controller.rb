@@ -1,15 +1,12 @@
 class Api::V1::RestaurantsController < ApplicationController
  def search
   restaurant_parser = RestaurantParser.new
-  categories = params[:categories]
+  food1 = params[:food1]
+  food2 = params[:food2]
   location = params[:location]
   event = Event.find(params[:event])
-  # categories = "italian"
-  # location = "boston, ma"
-  # price = 2
-  restaurant_parser.search(categories, location, event)
-  binding.pry
-  # session[:yelp_data] = restaurant_parser.data
+
+  restaurant_parser.search(food1, food2, location, event)
   render json: { data: restaurant_parser.data }
  end
 end
