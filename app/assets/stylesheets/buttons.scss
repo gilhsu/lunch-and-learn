@@ -7,6 +7,60 @@ button.radius, .button.radius {
   button.round, .button.round {
     border-radius: 1000px; }
 
+.button-outline {
+  border-color: #11AAB7;
+  border-style: solid;
+  border-width: 1.4px;
+  background-color: white;
+  color: #11AAB7;
+}
+
+.button-outline:hover {
+  color: #11AAB7;
+  background-color: #d3e9ff;
+}
+
+
 .not-clicked {
   background-color: #a0a0a0;
+}
+
+#top-bar-button {
+  margin-right: 20px;
+  width: 8rem;
+  height: 1.7rem;
+  line-height: 0;
+}
+
+li #top-bar-button {
+  margin-top: 6px;
+}
+
+#top-bar-button-outline {
+  margin-right: 20px;
+  width: 8rem;
+  height: 1.7rem;
+  line-height: 0;
+  border-color: #11AAB7;
+  border-style: solid;
+  border-width: 1.4px;
+  background-color: white;
+  color: #11AAB7;
+}
+
+#top-bar-button-dashboard {
+  margin-right: 20px;
+  margin-top: 6px;
+  width: 8rem;
+  height: 1.7rem;
+  line-height: 0;
+  border-color: #11AAB7;
+  border-style: solid;
+  border-width: 1.4px;
+  background-color: white;
+  color: #11AAB7;
+}
+
+#top-bar-button-outline:hover {
+  background-color: #d3e9ff;
 }

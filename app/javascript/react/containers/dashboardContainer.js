@@ -103,13 +103,13 @@ class DashboardContainer extends Component {
                   <img src={this.state.user_photo} id="dashboard-photo"></img>
                 </div>
                 <div className="cell small-8" style={{padding: '0px 0px 0px 20px'}}>
-                  <div className="text2 weight5">
+                  <div className="text2 weight9">
                     {this.state.user.first_name} {this.state.user.last_name}
                   </div>
-                  <div className="text4 weight7 primary">
+                  <div className="text4 weight5" style={{marginTop: '-5px'}}>
                     {company}
-                    <a href='/company/new/' className="text4 weight7 primary">{addCompany}</a><br/>
-                    <a href={'/users/' + this.state.user.id + '/edit'} className="text4 weight7 primary">Edit Profile</a>
+                    <a href='/company/new/' className="text4 weight5 primary">{addCompany}</a><br/>
+                    <a href={'/users/' + this.state.user.id + '/edit'} className="text4 weight5 primary">Edit Profile</a>
                   </div>
                 </div>
               </div>
@@ -131,7 +131,7 @@ class DashboardContainer extends Component {
             </div>
           </div>
           <div className="cell small-8">
-            <div className="">
+            <div className="horizontal-line" style={{paddingBottom: '0px'}}>
               <button className={buttonConfirmedStyle} style={{marginLeft: '5px'}} onClick={this.clickConfirmed}>Confirmed</button>
               <button className={buttonPendingStyle} style={{marginLeft: '5px'}} onClick={this.clickPending}>Pending</button>
             </div>

@@ -1,8 +1,18 @@
 $primary-color: #11AAB7;
+$secondary-color: #3f72cc;
+$text-gray-color: #919191;
 $field-gray-color: #5C5C5C;
 
 .primary {
   color: $primary-color;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.text-gray {
+  color: $text-gray-color;
 }
 
 .field-gray {
@@ -14,6 +24,10 @@ $field-gray-color: #5C5C5C;
   font-weight: 400;
   color: $field-gray-color;
   // font-size: 1.25rem;
+}
+
+a {
+  text-decoration: underline;
 }
 
 label {
@@ -54,11 +68,11 @@ label {
 }
 
 .text3 {
-  font-size: 1.0rem;
+  font-size: 1.2rem;
 }
 
 .text4 {
-  font-size: .85rem;
+  font-size: 1rem;
 }
 
 .text-center {

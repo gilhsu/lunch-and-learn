@@ -22,11 +22,20 @@ class EventsContainer extends Component {
               id={event.id}
               name={event.name}
               email={event.email}
+              contactEmail={event.contact_email}
               company={event.client_company}
-              date={event.created_at}
+              firstName={event.contact_first_name}
+              lastName={event.contact_last_name}
+              phone={event.contact_phone}
+              address={event.address}
+              suite={event.suite}
+              city={event.city}
+              state={event.state}
+              zip={event.zip}
+              date={event.date}
               updated={event.updated_at}
-              restaurants1={event.restaurants_one}
-              restaurants2={event.restaurants_two}
+              foodOne={event.food_one}
+              foodTwo={event.food_two}
               />
           )
         })
