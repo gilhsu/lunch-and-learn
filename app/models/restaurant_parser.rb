@@ -40,7 +40,7 @@ class RestaurantParser
     response1.parse["businesses"].each do |restaurant|
       if Restaurant.find_by(name: restaurant["name"])
         restaurant = Restaurant.find_by(name: restaurant["name"])
-        @restaurant_array << restaurant.name
+        @restaurant_array1 << restaurant.name
         new_caterer = Caterer.new(event: event, restaurant: restaurant, selection: 1)
         if new_caterer.save!
         end
@@ -75,13 +75,12 @@ class RestaurantParser
       end
     end
     @data << {params1[:categories] => @restaurant_array1}
-    binding.pry
 
     response2 = HTTP.auth("Bearer #{ENV["YELP_KEY"]}").get(url, params: params2)
     response2.parse["businesses"].each do |restaurant|
       if Restaurant.find_by(name: restaurant["name"])
         restaurant = Restaurant.find_by(name: restaurant["name"])
-        @restaurant_array << restaurant.name
+        @restaurant_array2 << restaurant.name
         new_caterer = Caterer.new(event: event, restaurant: restaurant, selection: 2)
         if new_caterer.save!
         end
@@ -116,6 +115,5 @@ class RestaurantParser
       end
     end
     @data << {params2[:categories] => @restaurant_array2}
-    binding.pry
   end
 end

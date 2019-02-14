@@ -11,7 +11,7 @@ class EventDetailsFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDay: new Date("2019-03-04"),
+      selectedDay: undefined,
       time: "12:00PM",
       firstName: "",
       lastName: "",
@@ -54,7 +54,7 @@ class EventDetailsFormContainer extends Component {
     .then(response => response.json())
     .then(body => {
       let bodyObject = {
-        selectedDay: new Date(body.date),
+        selectedDay: new Date(body.event.date),
         time: body.event.time,
         firstName: body.event.contact_first_name,
         lastName: body.event.contact_last_name,
@@ -209,7 +209,7 @@ class EventDetailsFormContainer extends Component {
               disabledDays={{ daysOfWeek: [0] }}
               />
             {this.state.selectedDay ? (
-              <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
+              <p>Date selected: {this.state.selectedDay.toLocaleDateString()}</p>
             ) : (
               <p>Please select a day here.</p>
             )}

@@ -43,7 +43,7 @@ confirmedEvent2 = Event.create(
   email: "rachel@dyerbrown.com",
   name: "2019 Office Furniture Lines",
   description: "Come see our newest furniture lines at our showroom!",
-  date: DateTime.strptime("03/01/2019 12:00", "%m/%d/%Y %H:%M"),
+  date: "2019-02-20",
   contact_first_name: "Rachel",
   contact_last_name: "Woodhouse",
   contact_email: "rachel@dyerbrown.com",
@@ -142,6 +142,57 @@ restaurant3 = Restaurant.create(
   review_count: 407
 )
 
+# for Event 1, Food Choice 2
+restaurant4 = Restaurant.create(
+  name: "Sam LaGrassa's",
+  image_url: "https://s3-media4.fl.yelpcdn.com/bphoto/JcSU7Vgu3iQPrJ60FMLiUA/o.jpg",
+  categories: ["Delis", "Sandwiches"],
+  rating: 4.5,
+  address1: "44 Province St",
+  city: "Boston",
+  zip_code: "02108",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 357-6861",
+  distance: 592.33748876547,
+  price: "$$",
+  review_count: 932
+)
+
+# for Event 1, Food Choice 2
+restaurant5 = Restaurant.create(
+  name: "Pauli's",
+  image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/rONCwS2qWOELG-PjqFXqKA/o.jpg",
+  categories: ["Sandwiches", "Caterers", "Seafood"],
+  rating: 4.5,
+  address1: "65 Salem St",
+  city: "Boston",
+  zip_code: "02113",
+  country: "US",
+  state: "MA",
+  display_phone: "(857) 284-7064",
+  distance: 585.648673644725,
+  price: "$$",
+  review_count: 907
+)
+
+# for Event 1, Food Choice 2
+restaurant6 = Restaurant.create(
+  name: "Boston Chowda",
+  image_url: "https://s3-media1.fl.yelpcdn.com/bphoto/lm6uRQnJ_6gdTIXVLYrRAA/o.jpg",
+  categories: ["Seafood", "Soup", "Sandwiches"],
+  rating: 4.0,
+  address1: "1 Faneuil Hall Market Pl",
+  city: "Boston",
+  zip_code: "02109",
+  country: "US",
+  state: "MA",
+  display_phone: "(617) 742-4441",
+  distance: 260.042969385942,
+  price: "$$",
+  review_count: 906
+)
+
 # for Event 1, Food Choice 1
 caterer1 = Caterer.create(
   event: confirmedEvent1,
@@ -161,4 +212,25 @@ caterer3 = Caterer.create(
   event: confirmedEvent1,
   restaurant: restaurant3,
   selection: 1
+)
+
+# for Event 1, Food Choice 2
+caterer4 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant4,
+  selection: 2
+)
+
+# for Event 1, Food Choice 2
+caterer5 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant5,
+  selection: 2
+)
+
+# for Event 1, Food Choice 2
+caterer6 = Caterer.create(
+  event: confirmedEvent1,
+  restaurant: restaurant6,
+  selection: 2
 )

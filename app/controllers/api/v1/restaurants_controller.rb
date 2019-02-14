@@ -7,7 +7,6 @@ class Api::V1::RestaurantsController < ApplicationController
   event = Event.find(params[:event])
 
   restaurant_parser.search(food1, food2, location, event)
-  binding.pry
   render json: { data: restaurant_parser.data }
  end
 end
