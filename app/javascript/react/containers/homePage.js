@@ -17,8 +17,8 @@ export const HomePage = (props) => {
               Made Easy
             </div>
             <div className="text3 weight3" id="hero-description">
-              The <span className="weight5">Lunch<span className="text2 weight5" style={{color: '#11AAB7'}}>&</span>Learn</span> webapp helps Sales Teams<br/>
-              easily invite and keep track of upcoming<br/>
+              The <span className="weight5">Lunch<span className="text2 weight5" style={{color: '#11AAB7'}}>&</span>Learn</span> app helps Sales Teams<br/>
+            easily create and keep track of upcoming<br/>
               catered lunch presentations.
             </div>
             <a href="/users/sign_in" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
