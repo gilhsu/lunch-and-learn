@@ -21,10 +21,10 @@ export const HomePage = (props) => {
               easily invite and keep track of upcoming<br/>
               catered lunch presentations.
             </div>
-            <a href="www.google.com" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
+            <a href="/users/sign_in" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
             <div className="text4 weight4" style={{marginTop: '0px'}}>
               Already have an account?
-            <a href="www.google.com" style={{fontWeight: 500}}> Log in.</a>
+            <a href="/users/sign_in" style={{fontWeight: 500, textDecoration: 'none'}}> Log in.</a>
             </div>
           </div>
         </div>
