@@ -17,14 +17,14 @@ export const HomePage = (props) => {
               Made Easy
             </div>
             <div className="text3 weight3" id="hero-description">
-              The <span className="weight5">Lunch<span className="text2 weight5" style={{color: '#11AAB7'}}>&</span>Learn</span> webapp helps Sales Teams<br/>
-              easily invite and keep track of upcoming<br/>
+              The <span className="weight5">Lunch<span className="text2 weight5" style={{color: '#11AAB7'}}>&</span>Learn</span> app helps Sales Teams<br/>
+            easily create and keep track of upcoming<br/>
               catered lunch presentations.
             </div>
-            <a href="www.google.com" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
+            <a href="/users/sign_in" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
             <div className="text4 weight4" style={{marginTop: '0px'}}>
               Already have an account?
-            <a href="www.google.com" style={{fontWeight: 500}}> Log in.</a>
+            <a href="/users/sign_in" style={{fontWeight: 500, textDecoration: 'none'}}> Log in.</a>
             </div>
           </div>
         </div>
