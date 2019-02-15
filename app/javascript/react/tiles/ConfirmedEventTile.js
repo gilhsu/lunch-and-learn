@@ -12,7 +12,9 @@ const ConfirmedEventTile = (props) => {
   //   </a>
   // </div>
 
-  var presentationDate = new Date(props.date).toDateString();
+  let arrayDate = props.date.split('-')
+  let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
+  let presentationDate = new Date(joinDate).toDateString();
 
   let restaurants1 = props.restaurants1.map(restaurant => {
     return(

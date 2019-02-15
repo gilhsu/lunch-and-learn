@@ -6,12 +6,11 @@ class Api::V1::UsersController < ApplicationController
     company = user.company
     events = Event.where(user_id: params[:id]).order(created_at: :asc)
     # events = events.order(created_at: :asc)
-    confirmed = events.where(confirmed: true).order(created_at: :asc)
+    confirmed = events.where(confirmed: true).sort_by{|i| i.date}
     # binding.pry
     # confirmed = confirmed.order(created_at: :asc)
     pending = events.where(confirmed: false).order(created_at: :asc)
     # pending = pending.order(created_at: :asc)
-
 
     # event_restaurants = []
     # confirmed_with_restaurants = confirmed.each do |c|
