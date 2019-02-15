@@ -54,7 +54,7 @@ const ConfirmedEventTile = (props) => {
   })
   return (
     <div className="horizontal-line" id="event-tile">
-      <div className="grid-x" style={{marginBottom: '-20px'}}>
+      <div className="grid-x" style={{marginBottom: '-10px'}}>
         <div className="cell small-1" id="check-mark"/>
         <div className="cell small-5 text2 weight7" style={{margin: '2px 0px 0px -25px'}}>
           Event Confirmed <br/>
