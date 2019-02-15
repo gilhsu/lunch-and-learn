@@ -64,7 +64,7 @@ confirmedEvent2 = Event.create(
 )
 confirmedEvent3 = Event.create(
   user: user1,
-  client_company: "Eklus Manfredi",
+  client_company: "Elkus Manfredi",
   email: "jeff@elkus.com",
   name: "Open Office Design Charrette",
   description: "Join us for an inspiring charrette with the best designers in the business.",

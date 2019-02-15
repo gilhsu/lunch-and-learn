@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TextField = (props) => {
-  // debugger;
   return (
     <label>{props.label}
       <input
