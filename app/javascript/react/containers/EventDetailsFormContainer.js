@@ -56,7 +56,6 @@ class EventDetailsFormContainer extends Component {
     .then(body => {
       let arrayDate = body.event.date.split('-')
       let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
-      debugger
       let bodyObject = {
         selectedDay: new Date(joinDate),
         time: body.event.time,
@@ -102,8 +101,7 @@ class EventDetailsFormContainer extends Component {
 
     let url = `/api/v1/restaurants/search?location=${
       this.state.zip}&food1=${this.state.foodOne}&food2=${this.state.foodTwo}&event=${this.props.id}`;
-
-      debugger
+      
     let formPayload = {
       event: {
         date: this.state.selectedDay,
