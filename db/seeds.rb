@@ -20,7 +20,7 @@ confirmedEvent1 = Event.create(
   email: "elizabeth@fusion.com",
   name: "Strongest Fabrics for Office Furniture",
   description: "Learn about a new line of ultra-durable funiture fabrics. They're beautiful AND strong!",
-  date: "2019-02-24",
+  date: "2019-02-28",
   contact_first_name: "Elizabeth",
   contact_last_name: "Caron",
   contact_email: "elizabeth@fusion.com",
@@ -36,6 +36,7 @@ confirmedEvent1 = Event.create(
   confirmed: true,
   time: "12:00PM",
   vegetarian: "3",
+  attendees: 34
 )
 confirmedEvent2 = Event.create(
   user_id: 1,
@@ -59,6 +60,7 @@ confirmedEvent2 = Event.create(
   confirmed: true,
   time: "12:00PM",
   vegetarian: "2",
+  attendees: 46
 )
 confirmedEvent3 = Event.create(
   user_id: 1,
@@ -66,7 +68,7 @@ confirmedEvent3 = Event.create(
   email: "jeff@elkus.com",
   name: "Open Office Design Charrette",
   description: "Join us for an inspiring charrette with the best designers in the business.",
-  date: "2019-03-04",
+  date: "2019-03-06",
   contact_first_name: "Jeff",
   contact_last_name: "Mulliken",
   contact_email: "jeff@elkus.com",
@@ -82,6 +84,7 @@ confirmedEvent3 = Event.create(
   confirmed: true,
   time: "12:30PM",
   vegetarian: "1",
+  attendees: 93
 )
 pendingEvent1 = Event.create(
   user_id: 1,

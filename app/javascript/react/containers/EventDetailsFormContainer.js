@@ -26,7 +26,7 @@ class EventDetailsFormContainer extends Component {
       foodTwo: "default",
       vegetarian: "default",
       notes: "",
-      attendees: ""
+      attendees: 0
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -69,7 +69,8 @@ class EventDetailsFormContainer extends Component {
         foodOne: body.event.food_one,
         foodTwo: body.event.food_two,
         vegetarian: body.event.vegetarian,
-        notes: body.event.notes
+        notes: body.event.notes,
+        attendees: body.event.attendees
       }
       this.setState(bodyObject)
     })
@@ -115,7 +116,8 @@ class EventDetailsFormContainer extends Component {
         food_one: this.state.foodOne,
         food_two: this.state.foodTwo,
         vegetarian: this.state.vegetarian,
-        notes: this.state.notes
+        notes: this.state.notes,
+        attendees: this.state.attendees
       }
     }
 
@@ -143,6 +145,7 @@ class EventDetailsFormContainer extends Component {
       foodTwo: "default",
       vegetarian: "default",
       notes: "",
+      attendees: 0
     })
   }
 
@@ -367,7 +370,7 @@ class EventDetailsFormContainer extends Component {
                 </fieldset>
                 <fieldset>
                   <div className="grid-x">
-                    <div className="cell small-4">
+                    <div className="cell small-3">
                       <legend># Attending</legend>
                         <input
                           onChange={this.handleChange}
@@ -378,7 +381,7 @@ class EventDetailsFormContainer extends Component {
                           value={this.state.attendees}
                           />
                     </div>
-                    <div className="cell small-8" style={{paddingLeft: '10px'}}>
+                    <div className="cell small-9" style={{paddingLeft: '10px'}}>
                       <legend>Notes For Your Presenter</legend>
                           <TextField
                             content={this.state.notes}

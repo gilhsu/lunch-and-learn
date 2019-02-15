@@ -38,6 +38,7 @@ class EventsContainer extends Component {
               foodTwo={event.food_two}
               restaurants1={event.restaurants_one}
               restaurants2={event.restaurants_two}
+              attendees={event.attendees}
               />
           )
         })
