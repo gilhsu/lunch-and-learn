@@ -82,12 +82,10 @@ const ConfirmedEventTile = (props) => {
         </div>
         <div className="cell small-6">
           <div className="text4 weight5 primary">
-            Catering Preferences
+            Number of Attendees
           </div>
-          <div className="text3 weight3">
-            First Choice: <span className="weight5">{props.foodOne}</span>
-            <br/>
-            Second Choice: <span className="weight5">{props.foodTwo}</span>
+          <div className="text2 weight5">
+            {props.attendees}
           </div>
         </div>
       </div>

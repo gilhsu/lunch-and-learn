@@ -64,6 +64,7 @@ class Api::V1::EventsController < ApplicationController
       :food_two,
       :vegetarian,
       :notes,
+      :attendees
     )
   end
 end

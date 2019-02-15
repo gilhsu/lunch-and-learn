@@ -12,8 +12,8 @@ const App = props => {
       <Router history={browserHistory}>
         <Route path="/" component={HomePage} />
         <Route path="/users/:id" component={DashboardContainer} />
-        <Route path="/events/:id" component={EventDetailsContainer} />
         <Route path="/events/new" component={InitiateEventFormContainer} />
+        <Route path="/events/:id" component={EventDetailsContainer} />
         <Route path="/events/:id/edit" component={ConfirmEventContainer} />
       </Router>
     </div>
