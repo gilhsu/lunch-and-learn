@@ -15,7 +15,7 @@ img = File.open(File.join(Rails.root, '/app/assets/images/0.jpeg'))
 User.find(1).update(profile_photo: img)
 
 confirmedEvent1 = Event.create(
-  user_id: 1,
+  user: user1,
   client_company: "Fusion Design Consultants",
   email: "elizabeth@fusion.com",
   name: "Strongest Fabrics for Office Furniture",
@@ -39,7 +39,7 @@ confirmedEvent1 = Event.create(
   attendees: 34
 )
 confirmedEvent2 = Event.create(
-  user_id: 1,
+  user: user1,
   client_company: "Dyer Brown Architects",
   email: "rachel@dyerbrown.com",
   name: "2019 Office Furniture Lines",
@@ -63,7 +63,7 @@ confirmedEvent2 = Event.create(
   attendees: 46
 )
 confirmedEvent3 = Event.create(
-  user_id: 1,
+  user: user1,
   client_company: "Eklus Manfredi",
   email: "jeff@elkus.com",
   name: "Open Office Design Charrette",
