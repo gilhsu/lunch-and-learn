@@ -10,6 +10,7 @@ class DashboardContainer extends Component {
       user: {},
       company: {},
       confirmed: [],
+      confirmedDates: [],
       pending: [],
       show: [],
       buttonConfirmed: true,
@@ -61,8 +62,15 @@ class DashboardContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      let confirmedDates = []
+      body.confirmed.map((event) => {
+        let arrayDate = event.date.split('-')
+        let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
+        confirmedDates.push(joinDate)
+      })
       this.setState({
         confirmed: body.confirmed,
+        confirmedDates: confirmedDates,
         pending: body.pending,
         show: body.confirmed,
         user: body.user,
