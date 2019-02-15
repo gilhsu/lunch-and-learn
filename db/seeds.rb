@@ -87,7 +87,7 @@ confirmedEvent3 = Event.create(
   attendees: 93
 )
 pendingEvent1 = Event.create(
-  user_id: 1,
+  user: user1,
   client_company: "Stantec",
   email: "jennifer@stantec.com",
   name: "Modern A/V Design for Offices",
