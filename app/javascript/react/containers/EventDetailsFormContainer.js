@@ -25,7 +25,8 @@ class EventDetailsFormContainer extends Component {
       foodOne: "default",
       foodTwo: "default",
       vegetarian: "default",
-      notes: ""
+      notes: "",
+      attendees: ""
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -365,15 +366,28 @@ class EventDetailsFormContainer extends Component {
                   </div>
                 </fieldset>
                 <fieldset>
-                  <legend>Notes For Your Presenter</legend>
-                    <div className="cell small-8">
-                      <TextField
-                        content={this.state.notes}
-                        placeholder="Allergies, Parking Info, Security Access, Etc."
-                        name="notes"
-                        passOnChange={this.handleChange}
-                      />
+                  <div className="grid-x">
+                    <div className="cell small-4">
+                      <legend># Attending</legend>
+                        <input
+                          onChange={this.handleChange}
+                          type='number'
+                          name='attendees'
+                          min='1'
+                          required="true"
+                          value={this.state.attendees}
+                          />
                     </div>
+                    <div className="cell small-8" style={{paddingLeft: '10px'}}>
+                      <legend>Notes For Your Presenter</legend>
+                          <TextField
+                            content={this.state.notes}
+                            placeholder="Allergies, Parking Info, Security Access, Etc."
+                            name="notes"
+                            passOnChange={this.handleChange}
+                          />
+                    </div>
+                  </div>
                 </fieldset>
                 <div className="text-right">
                   <input
