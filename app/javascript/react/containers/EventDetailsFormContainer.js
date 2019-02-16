@@ -26,7 +26,8 @@ class EventDetailsFormContainer extends Component {
       foodTwo: "default",
       vegetarian: "default",
       notes: "",
-      attendees: 0
+      attendees: 0,
+      confirmedDates: []
     }
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -43,7 +44,7 @@ class EventDetailsFormContainer extends Component {
   }
 
   fetchEventData(id){
-  fetch(`/api/v1/events/${id}`)
+  fetch(`/api/v1/events/${id}/edit`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -54,6 +55,16 @@ class EventDetailsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      let currentDate = body.event.date
+      let confirmedDates = []
+      body.confirmed_dates.map((date) => {
+        if (date !== currentDate) {
+          let arrayDate = date.split('-')
+          let joinDate = new Date(arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0])
+          joinDate.setHours(12,0,0,0)
+          confirmedDates.push(joinDate)
+        }
+      })
       let arrayDate = body.event.date.split('-')
       let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
       let bodyObject = {
@@ -72,7 +83,8 @@ class EventDetailsFormContainer extends Component {
         foodTwo: body.event.food_two,
         vegetarian: body.event.vegetarian,
         notes: body.event.notes,
-        attendees: body.event.attendees
+        attendees: body.event.attendees,
+        confirmedDates: confirmedDates
       }
       this.setState(bodyObject)
     })
@@ -82,11 +94,6 @@ class EventDetailsFormContainer extends Component {
   handleDayClick(day, { selected, disabled }) {
     if (disabled) {
       // Day is disabled, do nothing
-      return;
-    }
-    if (selected) {
-      // Unselect the day if already selected
-      this.setState({ selectedDay: undefined });
       return;
     }
     this.setState({ selectedDay: day });
@@ -101,7 +108,7 @@ class EventDetailsFormContainer extends Component {
 
     let url = `/api/v1/restaurants/search?location=${
       this.state.zip}&food1=${this.state.foodOne}&food2=${this.state.foodTwo}&event=${this.props.id}`;
-      
+
     let formPayload = {
       event: {
         date: this.state.selectedDay,
@@ -204,20 +211,21 @@ class EventDetailsFormContainer extends Component {
     console.log(this.state)
     return(
       <div className='grid-x grid-margin-x' style={{paddingRight: '20px'}}>
-        <div className="cell small-4 text-center">
+        <div className="cell small-4 text-center" style={{marginLeft: '0', marginRight: '0', width: '300px'}}>
           <div className="text2 weight7">
             1. Choose A Date
           </div>
           <div className="">
             <DayPicker
+              showOutsideDays
               onDayClick={this.handleDayClick}
               selectedDays={this.state.selectedDay}
-              disabledDays={{ daysOfWeek: [0] }}
+              disabledDays={ this.state.confirmedDates }
               />
             {this.state.selectedDay ? (
-              <p>Date selected: {this.state.selectedDay.toLocaleDateString()}</p>
+              <div className="text3">Date selected: <br/><span className="text2 weight5 primary">{this.state.selectedDay.toDateString()}</span></div>
             ) : (
-              <p>Please select a day here.</p>
+              <div className="text3">Please select a date.</div>
             )}
           </div>
           <div className="text2 weight7" style={{marginTop: '30px'}}>
