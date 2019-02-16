@@ -26,8 +26,6 @@ class Api::V1::UsersController < ApplicationController
     # confirmed_with_restaurants = confirmed.each do |c|
     #   c.yelp_restaurants = c.restaurants
     # end
-    # binding.pry
-
     render json: {
       confirmed: serialized_events(confirmed),
       pending: pending,

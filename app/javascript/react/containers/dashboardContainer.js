@@ -31,6 +31,19 @@ class DashboardContainer extends Component {
       return;
     }
     this.setState({ selectedDay: day });
+    let success = "https://media.giphy.com/media/yoJC2i270b1mQvcDdK/giphy.gif"
+    this.state.confirmed.forEach(event => {
+      if (event.date.toDateString() === day.toDateString()) {
+        if (this.state.buttonConfirmed === false) {
+          this.clickConfirmed()
+        }
+        this.setState({ show: [event] })
+        throw success
+      } else {
+        this.clickConfirmed()
+        this.setState({ show: this.state.confirmed })
+      }
+    })
   }
 
 
@@ -66,7 +79,9 @@ class DashboardContainer extends Component {
       body.confirmed.map((event) => {
         let arrayDate = event.date.split('-')
         let joinDate = new Date(arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0])
+        joinDate.setHours(12,0,0,0)
         confirmedDates.push(joinDate)
+        event.date = joinDate
       })
       this.setState({
         confirmed: body.confirmed,
@@ -80,16 +95,8 @@ class DashboardContainer extends Component {
     })
   }
 
-  // const modifiersStyles = {
-  //   confirmed: {
-  //     color: '#b7006b',
-  //     backgroundColor: '#ffddf1',
-  //   },
-  // };
-
 
   render() {
-    console.log(this.state.confirmedDates)
     let company
     let addCompany
     if (this.state.company.name != "No Company") {
@@ -150,14 +157,9 @@ class DashboardContainer extends Component {
                   modifiers={modifiers}
                   modifiersStyles={modifiersStyles}
                   />
-                {this.state.selectedDay ? (
-                  <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
-                ) : (
-                  <p>Please select a day here.</p>
-                )}
               </div>
               <div className="cell small-12 text-center">
-                <a href={`/events/new`} className="button radius">Create A New Event</a>
+                <a href={`/events/new`} className="button radius" style={{width: '85%', marginTop: '20px'}}>Create A New Event</a>
               </div>
             </div>
           </div>
