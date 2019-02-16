@@ -124,7 +124,8 @@
 .DayPicker-Day {
   display: table-cell;
   padding: 0.5em;
-  border-radius: 15%;
+  border-radius: 50%;
+  width: 40px;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
@@ -164,11 +165,11 @@
 
 .DayPicker-Day--today {
   color: #1ABDC6;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .DayPicker-Day--outside {
-  color: #8B9898;
+  color: #eaeaea;
   cursor: default;
 }
 
@@ -191,8 +192,9 @@
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   position: relative;
 
-  background-color: #4A90E2;
-  color: #F0F8FF;
+  background-color: #4A90E2 !important;
+  color: #F0F8FF !important;
+  font-weight: 900;
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {

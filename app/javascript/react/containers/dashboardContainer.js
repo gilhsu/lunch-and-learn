@@ -65,7 +65,7 @@ class DashboardContainer extends Component {
       let confirmedDates = []
       body.confirmed.map((event) => {
         let arrayDate = event.date.split('-')
-        let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
+        let joinDate = new Date(arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0])
         confirmedDates.push(joinDate)
       })
       this.setState({
@@ -80,7 +80,16 @@ class DashboardContainer extends Component {
     })
   }
 
+  // const modifiersStyles = {
+  //   confirmed: {
+  //     color: '#b7006b',
+  //     backgroundColor: '#ffddf1',
+  //   },
+  // };
+
+
   render() {
+    console.log(this.state.confirmedDates)
     let company
     let addCompany
     if (this.state.company.name != "No Company") {
@@ -98,6 +107,17 @@ class DashboardContainer extends Component {
       buttonConfirmedStyle = "button small radius not-clicked"
       buttonPendingStyle = "button small radius"
     }
+
+    const modifiers = {
+    confirmed: this.state.confirmedDates,
+    };
+    const modifiersStyles = {
+      confirmed: {
+        fontWeight: '500',
+        color: '#a07b00',
+        backgroundColor: '#ffeeb7',
+      },
+    };
 
     return(
       <div className="grid-container">
@@ -123,9 +143,12 @@ class DashboardContainer extends Component {
               </div>
               <div className="text-center" style={{marginTop: "20px"}}>
                 <DayPicker
+                  showOutsideDays
                   onDayClick={this.handleDayClick}
                   selectedDays={this.state.selectedDay}
-                  disabledDays={{ daysOfWeek: [0, 6] }}
+                  disabledDays={{ daysOfWeek: [] }}
+                  modifiers={modifiers}
+                  modifiersStyles={modifiersStyles}
                   />
                 {this.state.selectedDay ? (
                   <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
