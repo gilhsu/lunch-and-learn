@@ -25,11 +25,6 @@ class DashboardContainer extends Component {
       // Day is disabled, do nothing
       return;
     }
-    if (selected) {
-      // Unselect the day if already selected
-      this.setState({ selectedDay: undefined });
-      return;
-    }
     this.setState({ selectedDay: day });
     let success = "https://media.giphy.com/media/yoJC2i270b1mQvcDdK/giphy.gif"
     this.state.confirmed.forEach(event => {

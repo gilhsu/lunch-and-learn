@@ -58,6 +58,7 @@ class ConfirmEventContainer extends Component {
           <div className="cell small-8 overflow-hidden">
             <EventDetailsFormContainer
               id={this.props.params.id}
+              event={this.state.event}
               handleSubmit={this.handleSubmit}
             />
           </div>

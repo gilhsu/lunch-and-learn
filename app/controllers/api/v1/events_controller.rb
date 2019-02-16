@@ -12,8 +12,13 @@ class Api::V1::EventsController < ApplicationController
     event = Event.find(params[:id])
     user = event.user
     company = user.company
+    confirmed_events = user.events.where(confirmed: true)
+    confirmed_dates = []
+    confirmed_events.each do |event|
+      confirmed_dates << event.date
+    end
 
-    render json: {event: event, user: user, company: company}
+    render json: {event: event, user: user, company: company, confirmed_dates: confirmed_dates}
   end
 
   def create
