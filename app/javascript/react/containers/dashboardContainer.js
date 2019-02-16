@@ -10,6 +10,7 @@ class DashboardContainer extends Component {
       user: {},
       company: {},
       confirmed: [],
+      confirmedDates: [],
       pending: [],
       show: [],
       buttonConfirmed: true,
@@ -30,6 +31,19 @@ class DashboardContainer extends Component {
       return;
     }
     this.setState({ selectedDay: day });
+    let success = "https://media.giphy.com/media/yoJC2i270b1mQvcDdK/giphy.gif"
+    this.state.confirmed.forEach(event => {
+      if (event.date.toDateString() === day.toDateString()) {
+        if (this.state.buttonConfirmed === false) {
+          this.clickConfirmed()
+        }
+        this.setState({ show: [event] })
+        throw success
+      } else {
+        this.clickConfirmed()
+        this.setState({ show: this.state.confirmed })
+      }
+    })
   }
 
 
@@ -61,8 +75,17 @@ class DashboardContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      let confirmedDates = []
+      body.confirmed.map((event) => {
+        let arrayDate = event.date.split('-')
+        let joinDate = new Date(arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0])
+        joinDate.setHours(12,0,0,0)
+        confirmedDates.push(joinDate)
+        event.date = joinDate
+      })
       this.setState({
         confirmed: body.confirmed,
+        confirmedDates: confirmedDates,
         pending: body.pending,
         show: body.confirmed,
         user: body.user,
@@ -71,6 +94,7 @@ class DashboardContainer extends Component {
       })
     })
   }
+
 
   render() {
     let company
@@ -90,6 +114,17 @@ class DashboardContainer extends Component {
       buttonConfirmedStyle = "button small radius not-clicked"
       buttonPendingStyle = "button small radius"
     }
+
+    const modifiers = {
+    confirmed: this.state.confirmedDates,
+    };
+    const modifiersStyles = {
+      confirmed: {
+        fontWeight: '500',
+        color: '#a07b00',
+        backgroundColor: '#ffeeb7',
+      },
+    };
 
     return(
       <div className="grid-container">
@@ -115,18 +150,16 @@ class DashboardContainer extends Component {
               </div>
               <div className="text-center" style={{marginTop: "20px"}}>
                 <DayPicker
+                  showOutsideDays
                   onDayClick={this.handleDayClick}
                   selectedDays={this.state.selectedDay}
-                  disabledDays={{ daysOfWeek: [0, 6] }}
+                  disabledDays={{ daysOfWeek: [] }}
+                  modifiers={modifiers}
+                  modifiersStyles={modifiersStyles}
                   />
-                {this.state.selectedDay ? (
-                  <p>You clicked {this.state.selectedDay.toLocaleDateString()}</p>
-                ) : (
-                  <p>Please select a day here.</p>
-                )}
               </div>
               <div className="cell small-12 text-center">
-                <a href={`/events/new`} className="button radius">Create A New Event</a>
+                <a href={`/events/new`} className="button radius" style={{width: '85%', marginTop: '20px'}}>Create A New Event</a>
               </div>
             </div>
           </div>
