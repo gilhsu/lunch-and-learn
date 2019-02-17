@@ -208,7 +208,6 @@ class EventDetailsFormContainer extends Component {
 
 
   render() {
-    console.log(this.state)
     return(
       <div className='grid-x grid-margin-x' style={{paddingRight: '20px'}}>
         <div className="cell small-4 text-center" style={{marginLeft: '0', marginRight: '0', width: '300px'}}>
@@ -219,6 +218,7 @@ class EventDetailsFormContainer extends Component {
             <DayPicker
               showOutsideDays
               onDayClick={this.handleDayClick}
+              month={this.state.selectedDay}
               selectedDays={this.state.selectedDay}
               disabledDays={ this.state.confirmedDates }
               />
