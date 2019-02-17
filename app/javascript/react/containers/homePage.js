@@ -21,7 +21,7 @@ export const HomePage = (props) => {
             easily create and keep track of upcoming<br/>
               catered lunch presentations.
             </div>
-            <a href="/users/sign_in" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
+            <a href="/users/sign_up" className="button radius" style={{marginTop: '20px'}}>Sign Up</a>
             <div className="text4 weight4" style={{marginTop: '0px'}}>
               Already have an account?
             <a href="/users/sign_in" style={{fontWeight: 700, textDecoration: 'none'}}> Log in.</a>
