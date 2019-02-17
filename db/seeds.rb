@@ -7,12 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 company1 = Company.create(name: "No Company")
-company2 = Company.create(name: "Herman Miller", avatar: "company_img", description: "Herman Miller is a 100-year-old-plus company that places great importance on design, the environment, community service, and the health and well-being of our customers and our employees. Innovative ways to improve the performance of our customers’ organizations have become our hallmark.")
+company2 = Company.create(
+  name: "Herman Miller",
+  avatar: "company_img",
+  description: "Herman Miller is a 100-year-old-plus company that places great importance on design, the environment, community service, and the health and well-being of our customers and our employees. Innovative ways to improve the performance of our customers’ organizations have become our hallmark."
+)
 
 company_img = File.open(File.join(Rails.root, '/app/assets/images/Herman_Miller-logo-c.jpg'))
 Company.find(2).update(avatar: company_img)
 
-user1 = User.create(email: "gil@gmail.com", password: "password", rep: true, first_name: "Gilbert", last_name: "Hsu", profile_photo: "user_img", company_id: 2)
+user1 = User.create(
+  email: "gil@gmail.com",
+  password: "password",
+  rep: true, first_name: "Gilbert",
+  last_name: "Hsu",
+  profile_photo: "user_img",
+  company_id: 2,
+  title: "Account Executive"
+)
 
 user_img = File.open(File.join(Rails.root, '/app/assets/images/0.jpeg'))
 User.find(1).update(profile_photo: user_img)

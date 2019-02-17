@@ -1,54 +1,48 @@
 import React from 'react';
 
 const EventPresenterTile = (props) => {
-
-  let companyLogo
-  if (props.company.avatar) {
-    companyLogo = props.company.avatar.url
-  }
-
   return (
-    <div>
-      <div className="text2 weight7 text-center" style={{marginBottom: '25px'}}>
+    <div style={{marginLeft: '10px'}}>
+      <div className="text2 weight7" style={{marginBottom: '25px'}}>
         Lunch<span className="text2 weight7 primary" style={{fontSize: '30px'}}>&</span>Learn Invitation From
       </div>
       <div className="grid-x align-center">
-        <div className="grid-x small-10">
-          <div className="cell small-4">
-            <img src={props.userPhoto} id="dashboard-photo"></img>
+        <div className="grid-x small-12">
+          <div className="cell small-3">
+            <img src={props.userPicture} id="dashboard-photo"></img>
           </div>
-          <div className="cell small-8" style={{marginTop: '-5px', paddingLeft: ''}}>
+          <div className="cell small-9" style={{marginTop: '-3px', paddingLeft: '10px'}}>
             <div className="text2 weight5" style={{marginBottom: '-5px'}}>
-              {props.name} <br/>
+              {props.userFirst} {props.userLast}<br/>
             </div>
-            <div className="text4 weight4" style={{marginBottom: '5px'}}>
-              Director of Northeast Sales
+            <div className="text4 weight4">
+              {props.userTitle}
             </div>
             <div>
-              <img src={companyLogo} style={{width: '150px', marginLeft: '-5px'}}/>
+              <img src={props.companyLogo} style={{width: '150px', marginLeft: '-5px'}}/>
             </div>
           </div>
         </div>
-        <div style={{padding: '20px 30px 0px 28px'}}>
+        <div style={{padding: '20px 30px 0px 0px'}}>
           <div>
             <div className="weight7">
               Event Title
             </div>
-            {props.event.name}
+            {props.eventName}
           </div>
           <br/>
           <div>
             <div className="weight7">
               Description
             </div>
-            {props.event.description}
+            {props.eventDescription}
           </div>
           <br/>
           <div>
             <div className="weight7">
-              About {props.company.name}
+              About {props.companyName}
             </div>
-            {props.company.description}
+            {props.companyDescription}
           </div>
         </div>
       </div>

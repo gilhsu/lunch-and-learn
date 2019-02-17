@@ -208,7 +208,6 @@ class EventDetailsFormContainer extends Component {
 
 
   render() {
-    console.log(this.state)
     return(
       <div className='grid-x grid-margin-x' style={{paddingRight: '20px'}}>
         <div className="cell small-4 text-center" style={{marginLeft: '0', marginRight: '0', width: '300px'}}>
@@ -229,7 +228,7 @@ class EventDetailsFormContainer extends Component {
               <div className="text3">Please select a date.</div>
             )}
           </div>
-          <div className="text2 weight7" style={{marginTop: '15px'}}>
+          <div className="text2 weight7" style={{marginTop: '30px'}}>
             2. Pick A Time
           </div>
           <div className="grid-x align-center">

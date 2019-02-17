@@ -58,8 +58,6 @@ class InitiateEventFormContainer extends Component {
     }
 
   render() {
-    console.log(this.state)
-
     return(
       <div className='grid-x grid-margin-x align-center'>
         <div className="form cell small-6">
