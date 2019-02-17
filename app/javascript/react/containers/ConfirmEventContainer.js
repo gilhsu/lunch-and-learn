@@ -48,9 +48,10 @@ class ConfirmEventContainer extends Component {
       <div className="grid-container">
         <br/>
         <div className="grid-x grid-margin-x">
-          <div className="cell small-4 text-center vertical-line">
+          <div className="cell small-4 vertical-line align-center" style={{padding: '0px 10px 0px 20px', marginTop: '-7px'}}>
             <EventPresenterTile
-              avatar={this.state.company.avatar}
+              company={this.state.company}
+              event={this.state.event}
               name={userName}
               userPhoto={this.state.user_photo}
               />

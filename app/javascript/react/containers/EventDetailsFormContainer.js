@@ -219,6 +219,7 @@ class EventDetailsFormContainer extends Component {
             <DayPicker
               showOutsideDays
               onDayClick={this.handleDayClick}
+              month={this.state.selectedDay}
               selectedDays={this.state.selectedDay}
               disabledDays={ this.state.confirmedDates }
               />
@@ -228,7 +229,7 @@ class EventDetailsFormContainer extends Component {
               <div className="text3">Please select a date.</div>
             )}
           </div>
-          <div className="text2 weight7" style={{marginTop: '30px'}}>
+          <div className="text2 weight7" style={{marginTop: '15px'}}>
             2. Pick A Time
           </div>
           <div className="grid-x align-center">
