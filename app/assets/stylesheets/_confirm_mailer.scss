@@ -108,5 +108,22 @@ label {
   background-color: white;
   margin: auto;
   width: 50%;
+}
 
+.button {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mail-button {
+  background-color: $primary-color;
+  color: white;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px 30px 10px 30px;
+  align-self: center;
+  text-decoration: none;
+  font-weight: 300;
+  margin: 5px 0px 5px 0px;
 }

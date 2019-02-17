@@ -1,6 +1,14 @@
-<%= @user.first_name %> has invited you to a Lunch and Learn event called <%= @event.name %> <br/>
+<%= @user.first_name %> <%= @user.last_name %> from <%= @user.company.name %> has invited you to a weLunch&Learn event!
 
-Here is the description:
+Here are the initial event details:
+
+Event Name:
+<%= @event.name %>
+
+Event Description:
 <%= @event.description %>
 
-Welcome!
+<%= link_to 'Click Here', edit_event_url(@event) %> to add details like food preferences, number of attendees and confirm the event with <%= @user.first_name %>!
+
+The WeLunch&Learn Team
+https://welunchandlearn.herokuapp.com

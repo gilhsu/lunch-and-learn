@@ -1,22 +1,29 @@
-<div class="background-gray">
-  <div class="background-white">
-    <img src="https://s3.amazonaws.com/welunchandlearn/uploads/0.jpeg"/>
+<div class="background-white">
+  <img src="https://s3.amazonaws.com/welunchandlearn/uploads/logo.png" style='height: 40px; margin: 20px 0px 15px 0px;'/>
+  <br/>
+  <div class="text4 weight3">
+    <%= @user.first_name %> <%= @user.last_name %> from <%= @user.company.name %> has invited you to a weLunch&Learn event!
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    Here are the initial event details:
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    <span class="weight4">Event Name:</span><br/>
+    <%= @event.name %>
     <br/>
-    <div class="text1 weight7 small-12 primary">
-      <%= @user.first_name %> has invited you to a Lunch&Learn!
-    </div>
     <br/>
-    <div class="text3 weight3 small-12">
-      Here's a preview of the event:
-    </div>
-    <br/>
-    <div class="text2 weight5 small-12">
-      Event Name: <%= @event.name %><br/>
-      Event Description: <%= @event.description %>
-    </div>
-    <br/>
-    <div>
-      <%= link_to 'Click this link', edit_event_url(@event) %> to add details like food preferences, number of attendees and confirm the event with <%= @user.first_name %>!
-    </div>
+    <span class="weight4">Event Description:</span><br/>
+    <%= @event.description %>
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    <%= link_to 'Click Here', edit_event_url(@event), :class => 'weight4 primary' %> to add details like food preferences, number of attendees and confirm the event with <%= @user.first_name %>!
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    The WeLunch&Learn Team <br/>
+    <a class="text4 weight3 primary" href="https://welunchandlearn.herokuapp.com">https://welunchandlearn.herokuapp.com</a>
   </div>
 </div>
