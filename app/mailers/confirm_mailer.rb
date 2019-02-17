@@ -1,4 +1,5 @@
 class ConfirmMailer < ApplicationMailer
+  include InlineStylesMailer
   layout 'invite'
 
   def presenter_invite(user, event)

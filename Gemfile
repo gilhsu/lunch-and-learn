@@ -64,3 +64,4 @@ gem "active_model_serializers"
 gem 'carrierwave', '~>1.0'
 gem 'fog'
 gem 'http'
+gem 'inline_styles_mailer'

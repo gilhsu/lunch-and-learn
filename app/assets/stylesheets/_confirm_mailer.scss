@@ -1,0 +1,112 @@
+$primary-color: #11AAB7;
+$secondary-color: #4A90E2;
+$text-gray-color: #919191;
+$field-gray-color: #5C5C5C;
+$mailer-background-color: #f7f7f7;
+
+.primary {
+  color: $primary-color;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+.text-gray {
+  color: $text-gray-color;
+}
+
+.field-gray {
+  color: $field-gray-color;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: $field-gray-color;
+  // font-size: 1.25rem;
+}
+
+a {
+  text-decoration: underline;
+}
+
+label {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.weight1 {
+  font-weight: 100;
+}
+
+.weight3 {
+  font-weight: 300;
+}
+
+.weight4 {
+  font-weight: 400;
+}
+
+.weight5 {
+  font-weight: 500;
+}
+
+.weight7 {
+  font-weight: 700;
+}
+
+.weight9 {
+  font-weight: 900;
+}
+
+.text1 {
+  font-size: 2.3rem;
+}
+
+.text2 {
+  font-size: 1.5rem;
+}
+
+.text3 {
+  font-size: 1.2rem;
+}
+
+.text4 {
+  font-size: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.align-center {
+
+    -webkit-box-pack: center;
+
+    -webkit-justify-content: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
+
+}
+
+.background-gray {
+  padding: 30px 0px 20px 0px;
+}
+
+.background-white {
+  background-color: white;
+  margin: auto;
+  width: 50%;
+
+}

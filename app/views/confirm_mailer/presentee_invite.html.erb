@@ -1,18 +1,22 @@
-<div class="grid-x">
-  <div class="text1 weight7 small-12">
-    <%= @user.first_name %> has invited you to a Lunch&Learn!
-  </div>
-  <br/>
-  <div class="text3 weight3 small-12">
-    Here's a preview of the event:
-  </div>
-  <br/>
-  <div class="text2 weight5 small-12">
-    Event Name: <%= @event.name %><br/>
-    Event Description: <%= @event.description %>
-  </div>
-  <br/>
-  <div>
-    <%= link_to 'Click this link', edit_event_url(@event) %> to add details like food preferences, number of attendees and confirm the event with <%= @user.first_name %>!
+<div class="background-gray">
+  <div class="background-white">
+    <img src="https://s3.amazonaws.com/welunchandlearn/uploads/0.jpeg"/>
+    <br/>
+    <div class="text1 weight7 small-12 primary">
+      <%= @user.first_name %> has invited you to a Lunch&Learn!
+    </div>
+    <br/>
+    <div class="text3 weight3 small-12">
+      Here's a preview of the event:
+    </div>
+    <br/>
+    <div class="text2 weight5 small-12">
+      Event Name: <%= @event.name %><br/>
+      Event Description: <%= @event.description %>
+    </div>
+    <br/>
+    <div>
+      <%= link_to 'Click this link', edit_event_url(@event) %> to add details like food preferences, number of attendees and confirm the event with <%= @user.first_name %>!
+    </div>
   </div>
 </div>
