@@ -1,23 +1,30 @@
-<div class="grid-x">
-  <div class="text1 weight7 small-12">
+<div class="background-white">
+  <img src="https://s3.amazonaws.com/welunchandlearn/uploads/logo.png" style='height: 40px; margin: 20px 0px 15px 0px;'/>
+  <br/>
+  <div class="text4 weight3">
     Your invitation has been sent!
   </div>
-  <div class="text3 weight3 small-12">
-    This as auto-generated email confirming you've successfully sent a weLunch&Learn invitation with the following information:
+  <br/>
+  <div class="text4 weight3">
+    This is an auto-generated email confirming that you've successfully sent a weLunch&Learn invitation to <span class="weight4 primary"><%= @event.email %></span> at <span class="weight4 primary"><%= @event.client_company %></span> with the following information:
   </div>
   <br/>
-  <div class="text2 weight5 small-12">
-    Event Name: <%= @event.name %><br/>
-    Presentee Company: <%= @event.client_company %><br/>
-    Sent to: <%= @event.email %><br/>
-    Event Description: <%= @event.description %>
+  <div class="text4 weight3">
+    <span class="weight4">Event Name:</span><br/>
+    <%= @event.name %>
+    <br/>
+    <br/>
+    <span class="weight4">Event Description:</span><br/>
+    <%= @event.description %>
   </div>
   <br/>
   <div>
-    <%= link_to 'Click Here to See Your Events', user_url(@user) %>
+    <%= link_to 'Click Here to See All Your Events', user_url(@user), :class => 'weight4 primary' %>
   </div>
   <br/>
-  <div class="text3 weight5 small-12">
+  <div class="text4 weight3">
     Thanks for using weLunch&Learn!
+    <br/>
+    <a class="text4 weight3 primary" href="https://welunchandlearn.herokuapp.com">https://welunchandlearn.herokuapp.com</a>
   </div>
 </div>
