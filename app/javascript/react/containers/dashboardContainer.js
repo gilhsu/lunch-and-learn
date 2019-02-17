@@ -122,9 +122,7 @@ class DashboardContainer extends Component {
     };
 
     return(
-      <div className="grid-container">
-        <br/>
-        <br/>
+      <div className="grid-container" style={{marginTop: '40px'}}>
         <div className="grid-x grid-margin-x">
           <div className="cell small-4 vertical-line">
             <div className="">
