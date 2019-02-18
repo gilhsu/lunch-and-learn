@@ -55,7 +55,10 @@ class EventDetailsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let currentDate = body.event.date
+      let currentDate
+      if (body.event.date){
+        currentDate = body.event.date
+      }
       let confirmedDates = []
       body.confirmed_dates.map((date) => {
         if (date !== currentDate) {
@@ -65,26 +68,40 @@ class EventDetailsFormContainer extends Component {
           confirmedDates.push(joinDate)
         }
       })
-      let arrayDate = body.event.date.split('-')
-      let joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
-      let bodyObject = {
-        selectedDay: new Date(joinDate),
-        time: body.event.time,
-        firstName: body.event.contact_first_name,
-        lastName: body.event.contact_last_name,
-        contactEmail: body.event.contact_email,
-        phone: body.event.contact_phone,
-        address: body.event.address,
-        suite: body.event.suite,
-        city: body.event.city,
-        state: body.event.state,
-        zip: body.event.zip,
-        foodOne: body.event.food_one,
-        foodTwo: body.event.food_two,
-        vegetarian: body.event.vegetarian,
-        notes: body.event.notes,
-        attendees: body.event.attendees,
-        confirmedDates: confirmedDates
+
+      let arrayDate
+      let joinDate
+      if (body.event.date){
+        arrayDate = body.event.date.split('-')
+        joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
+      }
+
+      let bodyObject
+      if (body.event.date) {
+        bodyObject = {
+          selectedDay: new Date(joinDate),
+          time: body.event.time,
+          firstName: body.event.contact_first_name,
+          lastName: body.event.contact_last_name,
+          contactEmail: body.event.contact_email,
+          phone: body.event.contact_phone,
+          address: body.event.address,
+          suite: body.event.suite,
+          city: body.event.city,
+          state: body.event.state,
+          zip: body.event.zip,
+          foodOne: body.event.food_one,
+          foodTwo: body.event.food_two,
+          vegetarian: body.event.vegetarian,
+          notes: body.event.notes,
+          attendees: body.event.attendees,
+          confirmedDates: confirmedDates
+        }
+      } else {
+        bodyObject = {
+          selectedDay: new Date(),
+          confirmedDates: confirmedDates
+        }
       }
       this.setState(bodyObject)
     })
