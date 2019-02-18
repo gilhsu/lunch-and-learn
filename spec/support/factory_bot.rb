@@ -10,7 +10,7 @@ FactoryBot.define do
     profile_photo { Faker::Avatar.image }
     bio { Faker::Quote.yoda }
     rep { true }
-    company_id { 1 }
+    company { FactoryBot.create(:company) }
     title { "Account Executive" }
   end
 
