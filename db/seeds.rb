@@ -19,7 +19,8 @@ Company.find(2).update(avatar: company_img)
 user1 = User.create(
   email: "gil@gmail.com",
   password: "password",
-  rep: true, first_name: "Gilbert",
+  rep: true,
+  first_name: "Gilbert",
   last_name: "Hsu",
   profile_photo: "user_img",
   company_id: 2,

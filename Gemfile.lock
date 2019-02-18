@@ -103,6 +103,8 @@ GEM
     execjs (2.7.0)
     factory_bot (5.0.1)
       activesupport (>= 4.2.0)
+    faker (1.9.3)
+      i18n (>= 0.7)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
@@ -502,6 +504,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot
+  faker
   fog
   foundation-rails
   http
