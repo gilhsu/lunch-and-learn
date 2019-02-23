@@ -3,7 +3,6 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     user = current_user
-    binding.pry
     company = user.company
     events = Event.where(user_id: params[:id]).order(created_at: :asc)
     confirmed = events.where(confirmed: true).sort_by{|i| i.date}
