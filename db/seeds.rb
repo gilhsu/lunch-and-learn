@@ -17,7 +17,7 @@ company_img = File.open(File.join(Rails.root, '/app/assets/images/Herman_Miller-
 Company.find(2).update(avatar: company_img)
 
 user1 = User.create(
-  email: "gil@gmail.com",
+  email: ENV["SEED_EMAIL"],
   password: "password",
   rep: true,
   first_name: "Gilbert",

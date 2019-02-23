@@ -7,7 +7,7 @@ class ConfirmMailer < ApplicationMailer
 
     mail(
       to: user.email,
-      subject: "Event details for #{event.name}"
+      subject: "Your weLunchandLearn invitation has been sent!"
     )
   end
 
@@ -17,7 +17,7 @@ class ConfirmMailer < ApplicationMailer
 
     mail(
       to: event.email,
-      subject: "#{user.first_name} has invited you to Event details for #{event.name}"
+      subject: "#{user.first_name} #{user.last_name} has invited you to weLunchandLearn event!"
     )
   end
 
