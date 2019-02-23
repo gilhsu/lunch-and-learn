@@ -34,7 +34,6 @@ class InitiateEventFormContainer extends Component {
 
 
   postEvent(formPayload){
-    debugger
     fetch(`/api/v1/events/`, {
       method: 'POST',
       body: JSON.stringify(formPayload),

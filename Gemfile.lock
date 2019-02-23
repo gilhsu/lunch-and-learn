@@ -108,6 +108,8 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.10.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (2.1.0)
@@ -505,6 +507,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot
   faker
+  figaro
   fog
   foundation-rails
   http
