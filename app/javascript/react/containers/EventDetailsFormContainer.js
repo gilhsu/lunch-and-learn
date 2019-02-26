@@ -193,7 +193,7 @@ class EventDetailsFormContainer extends Component {
       })
       .then(response => {
         if(response.ok){
-          return response
+          return location.href=`/users/${body.user_id}`
         } else {
           let errorMessage= `${response.status} (${response.statusText})`, error = new Error(errorMessage)
           throw(error)
@@ -201,7 +201,7 @@ class EventDetailsFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        return location.href=`/users/${body.user_id}`
+
       })
     }
 
