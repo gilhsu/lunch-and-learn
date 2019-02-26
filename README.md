@@ -30,7 +30,7 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 - Miscellaneous Notes
   - ie: "Head of Marketing the will be in attendance."
 
-## Workflow
+## Workflow & Functionality
 1.  User Signup (Presenter only available currently)
 2.  Create new lunch-and-learn event invitation
 3.  User has a new "pending event" in their dashboard
