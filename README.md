@@ -31,16 +31,16 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
   - ie: "Head of Marketing the will be in attendance."
 
 ## Workflow
-1. User Signup (Presenter only available currently)
-2. Create new weLunch&Learn event invitation
-3. User has a new "pending event" in their dashboard
-4. User recieves confirmation email that the invitation has been sent successfully
-5. Presentee receives email with link to the event details page
-6. Presentee fills out required fields such as: presentation date (presenter's unavailable dates are unselectable), number of attendees, food preferences etc.
-7. Once submitted Presentee recieves confirmation email that event is been finalized.
-8. Initial User receives email notifying them that the Presentee has filled out the necessary event details.
-9. User logs into dashboard. Event has moved from "pending" to "confirmed". 
-10. Specific event tile shows the app has taken the location and food preferences data to query the Yelp API and suggest the best catering options for the event.
+1.  User Signup (Presenter only available currently)
+2.  Create new lunch-and-learn event invitation
+3.  User has a new "pending event" in their dashboard
+4.  User recieves confirmation email that the invitation has been sent successfully
+5.  Presentee receives email with link to the event details page
+6.  Presentee fills out required fields such as: presentation date (presenter's unavailable dates are unselectable), number of attendees, food preferences etc.
+7.  Once submitted Presentee recieves confirmation email that event is been finalized.
+8.  Initial User receives email notifying them that the Presentee has filled out the necessary event details.
+9.  User logs into dashboard. Event has moved from "pending" to "confirmed". 
+10.  Specific event tile shows the app has taken the location and food preferences data to query the Yelp API and suggest the best catering options for the event.
 
 
 ## Technologies
