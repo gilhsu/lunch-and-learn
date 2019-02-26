@@ -6,7 +6,7 @@ A scheduler app that helps initate and coordinate lunch-and-learn events with in
 ## Heroku Link
 https://welunchandlearn.herokuapp.com
 
-*Due to secret key dependencies, please use the Heroku link to access the app's full functionality.*
+*Due to api key dependencies, please use the Heroku link to access the app's full functionality.*
 
 
 ## About
@@ -44,8 +44,12 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 
 ## Technologies
 
-- Ruby- 2.4.5
-
+- React: 15.4.2
+- Ruby: 2.4.5
+- Rails: 5.2.2
+- Devise: 4.6.1
+- Carrierwave: 1.0
+- React-day-picker: 7.2.4
 
 ## Version
 - 0.1 MVP/Proof of Concept
