@@ -9,10 +9,14 @@ Note: Due to secret key dependencies, please use the Heroku link to access the a
 
 
 ### About
-Thanks for checkout out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling a very common and persistant business problem. This development process has been an incredible learning experience and look forward to continuing my eduction in web programming through future releases. Please note that is still a work in progress.
+Thanks for checkout out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling a common and persistant business problem. This development process has been an incredible learning experience and look forward to continuing my eduction in web programming through future releases. 
 
+* Please note that weLunch&Learn is still very much a work in progress!
 
-### Business Problem
+### The Business Problem
+A lunch-and-learn is an aptly-named catered event where a presenter shares his or her wisdom to a group of presentees. Despite sounding trivial, note the slew of important data needed prior to holding the event:
+* Availability of Presenter
+* Availability of Presentee Group
 
 ### weLunch&Learn Features
 
