@@ -45,11 +45,10 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 ## Technologies
 
 - React: 15.4.2
-- Ruby: 2.4.5
 - Rails: 5.2.2
+- Ruby: 2.4.5
 - Devise: 4.6.1
 - Carrierwave: 1.0
-- React-day-picker: 7.2.4
 
 ## Version
 - 0.1 MVP/Proof of Concept
