@@ -1,7 +1,7 @@
 [![Codeship Status for sketchbook21/lunch-and-learn](https://app.codeship.com/projects/e11e4210-0951-0137-fc98-06b77dea8d40/status?branch=master)](https://app.codeship.com/projects/326128)
 
 # weLunch&Learn
-A scheduler app that help presenters set up and keep track of catered lunch presentations.
+A scheduler app that helps initate and coordinate lunch-and-learn events with intuitive 2-party forms, automated mailers and appointment scheduling functionality.
 
 ## Heroku Link
 https://welunchandlearn.herokuapp.com
@@ -30,14 +30,17 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 - Miscellaneous Notes
   - ie: "Head of Marketing the will be in attendance."
 
-## weLunch&Learn Workflow & Features
-weLunch&Learn helps initate and coordinate lunch-and-learn events with an intuitive 2-party from, automated mailers and appointment scheduling functionality.
-
-Workflow:
-1. Signup (Presenter only available)
-2. Create new weLunch&Learn event invitation.
-3. User will recieve confirmation email that the invitation has been sent successfully.
-4. 
+## Workflow
+1. User Signup (Presenter only available currently)
+2. Create new weLunch&Learn event invitation
+3. User has a new "pending event" in their dashboard
+4. User recieves confirmation email that the invitation has been sent successfully
+5. Presentee receives email with link to the event details page
+6. Presentee fills out required fields such as: presentation date (presenter's unavailable dates are unselectable), number of attendees, food preferences etc.
+7. Once submitted Presentee recieves confirmation email that event is been finalized.
+8. Initial User receives email notifying them that the Presentee has filled out the necessary event details.
+9. User logs into dashboard. Event has moved from "pending" to "confirmed". 
+10. Specific event tile shows the app has taken the location and food preferences data to query the Yelp API and suggest the best catering options for the event.
 
 
 ## Technologies
