@@ -10,7 +10,7 @@ https://welunchandlearn.herokuapp.com
 
 
 ## About
-Thanks for checkout out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling a common and persistant business problem. This development process has been an incredible learning experience and look forward to continuing my eduction in web programming through future releases. 
+Thanks for checkout out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling an existing and persistant business problem. This development process has been an incredible learning experience and look forward to continuing my eduction in web programming through future releases. 
 
 *Please note that weLunch&Learn is still very much a work in progress!* :wink:
 
