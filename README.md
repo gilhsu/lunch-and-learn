@@ -29,6 +29,8 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
   - Building Access
 - Miscellaneous Notes
   - ie: "Head of Marketing the will be in attendance."
+  
+Typically this information is shared and coordinated via email. There must be a better way! Enter **weLunch&Learn**
 
 ## Workflow & Functionality
 1.  User Signup (Presenter only available currently)
