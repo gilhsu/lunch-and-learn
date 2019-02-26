@@ -5,6 +5,7 @@ A scheduler app that help presenters set up and keep track of catered lunch pres
 
 ## Heroku Link
 https://welunchandlearn.herokuapp.com
+
 *Due to secret key dependencies, please use the Heroku link to access the app's full functionality.*
 
 
