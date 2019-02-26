@@ -15,7 +15,7 @@ Thanks for checking out weLunch&Learn. This is my first capstone project as a pr
 *Please note that weLunch&Learn is still very much a work in progress!* :wink:
 
 ## The Business Problem
-A lunch-and-learn is an aptly named catered lunch event where an external or internal presenter shares his or her wisdom to a group of presentees. Despite sounding trivial, note the slew of important information needed to coordinate such an event below. Typically this information is shared and coordinated via email. There must be a better way! Enter **weLunch&Learn**
+A lunch-and-learn is an aptly named catered lunch event where an external or internal presenter shares his or her wisdom to a group of presentees. Despite sounding trivial, note the slew of important information needed to coordinate such an event below. Typically this information is shared and coordinated via email. There must be a better way!
 - Availability of Presenter
 - Availability of Presentee Group
 - Number of Attendees
