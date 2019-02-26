@@ -35,7 +35,7 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 2.  Create new lunch-and-learn event invitation.
 3.  User has a new "pending event" in their dashboard.
 4.  User recieves confirmation email that the invitation has been sent successfully.
-5.  Presentee receives email with link to the event details page.
+5.  Presentee receives email with a link to the event details page.
 6.  Presentee fills out required fields such as: presentation date (Presenter's unavailable dates are not selectable), number of attendees, food preferences etc.
 7.  Once event details are submitted, Presentee recieves confirmation email that event is been finalized.
 8.  Initial User receives an email notification that the Presentee has filled out the necessary event details.
