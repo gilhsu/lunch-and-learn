@@ -38,15 +38,14 @@ A lunch-and-learn is an aptly named catered lunch event where an external or int
 5.  Presentee receives email with link to the event details page
 6.  Presentee fills out required fields such as: presentation date (presenter's unavailable dates are unselectable), number of attendees, food preferences etc.
 7.  Once event details are submitted, Presentee recieves confirmation email that event is been finalized.
-8.  Initial User receives email notifying them that the Presentee has filled out the necessary event details.
+8.  Initial User receives an email notification that the Presentee has filled out the necessary event details.
 9.  User logs into dashboard. Event has moved from "pending" to "confirmed". 
-10.  Specific event tile shows the app has taken the location and food preferences data to query the Yelp API and suggest the best catering options for the event.
-
+10.  In the specific event tile, the app suggests the best catering options by querying the Yelp API using the provided location and food preferences data.
 
 ## Technologies
 
-> - Ruby- 2.4.5
+- Ruby- 2.4.5
 
 
 ## Version
-> - 0.1 MVP/Proof of concept - 2/19/2019
+- 0.1 MVP/Proof of Concept
