@@ -19,7 +19,8 @@ A lunch-and-learn is an aptly-named catered event where a presenter shares his o
 * Availability of Presentee Group
 * Number of Attendees
 * Food Preferences for Presentee Group
-* Food Allergies
+  - General Likes/Dislikes
+  - Allergies
 * Presentation Location
 * 
 
