@@ -17,6 +17,11 @@ Thanks for checkout out weLunch&Learn. This is my first capstone project as a pr
 A lunch-and-learn is an aptly-named catered event where a presenter shares his or her wisdom to a group of presentees. Despite sounding trivial, note the slew of important data needed prior to holding the event:
 * Availability of Presenter
 * Availability of Presentee Group
+* Number of Attendees
+* Food Preferences for Presentee Group
+* Food Allergies
+* Presentation Location
+* 
 
 ### weLunch&Learn Features
 
