@@ -4,7 +4,7 @@ html, body {
   height: 100%
 }
 
-#hero{
+#hero {
   height: 94vh;
   display: flex;
   min-width: 100%;
@@ -90,8 +90,11 @@ html, body {
   overflow: hidden;
 }
 
-#event-tile {
-  padding: 25px 10px 25px 10px;
+.restaurant-tile {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 #dashboard-photo {
@@ -99,9 +102,6 @@ html, body {
   border-radius: 10px;
 }
 
-.restaurant-tile {
-  height: 70px;
-  width: 70px;
-  object-fit: cover;
-  border-radius: 5px;
+#event-tile {
+  padding: 25px 10px 25px 10px;
 }

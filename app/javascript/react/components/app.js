@@ -5,6 +5,7 @@ import DashboardContainer from "../containers/dashboardContainer";
 import InitiateEventFormContainer from "../containers/InitiateEventFormContainer";
 import ConfirmEventContainer from "../containers/ConfirmEventContainer";
 import EventDetailsContainer from "../containers/EventDetailsContainer"
+import ThankYouContainer from "../containers/ThankYouContainer"
 
 const App = props => {
   return (
@@ -15,6 +16,7 @@ const App = props => {
         <Route path="/events/new" component={InitiateEventFormContainer} />
         <Route path="/events/:id" component={EventDetailsContainer} />
         <Route path="/events/:id/edit" component={ConfirmEventContainer} />
+        <Route path="/thankyou" component={ThankYouContainer} />
       </Router>
     </div>
   );

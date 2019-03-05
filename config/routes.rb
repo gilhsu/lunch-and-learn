@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit]
   resources :events, only: [:new, :edit]
   resources :caterers, only: [:create]
+  resources :thankyou, only: [:index]
 
 
   namespace :api do

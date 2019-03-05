@@ -38,8 +38,9 @@ class Api::V1::EventsController < ApplicationController
   def update
     event = Event.find(params[:id])
     event.confirmed = true
+    binding.pry
     if event.update_attributes(event_params)
-      render json: event
+      render json: current_user
     else
       render json: {error: review.errors.full_messages}, status: :unprocessable_entity
     end
