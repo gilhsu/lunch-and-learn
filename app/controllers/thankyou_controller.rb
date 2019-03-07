@@ -1,5 +1,5 @@
 class ThankyouController < ApplicationController
 
- def index
+ def show
  end
 end

@@ -16,7 +16,7 @@ const App = props => {
         <Route path="/events/new" component={InitiateEventFormContainer} />
         <Route path="/events/:id" component={EventDetailsContainer} />
         <Route path="/events/:id/edit" component={ConfirmEventContainer} />
-        <Route path="/thankyou" component={ThankYouContainer} />
+        <Route path="/thankyou/:id" component={ThankYouContainer} />
       </Router>
     </div>
   );
