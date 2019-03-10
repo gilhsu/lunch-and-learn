@@ -7,6 +7,8 @@ class ThankYouContainer extends Component {
     this.state = {
       event: {
         selectedDay: undefined,
+        name: "",
+        description: "",
         time: "12:00PM",
         firstName: "",
         lastName: "",
@@ -17,12 +19,14 @@ class ThankYouContainer extends Component {
         city: "",
         state: "MA",
         zip: "",
-        foodOne: "default",
-        foodTwo: "default",
-        vegetarian: "default",
+        foodOne: "",
+        foodTwo: "",
+        vegetarian: "",
         notes: "",
         attendees: 0,
-      }
+      },
+      user: {},
+      company: {}
     }
     this.fetchEventData = this.fetchEventData.bind(this)
   }
@@ -48,16 +52,6 @@ class ThankYouContainer extends Component {
       if (body.event.date){
         currentDate = body.event.date
       }
-      // let confirmedDates = []
-      // body.confirmed_dates.map((date) => {
-      //   if (date !== currentDate) {
-      //     let arrayDate = date.split('-')
-      //     let joinDate = new Date(arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0])
-      //     joinDate.setHours(12,0,0,0)
-      //     confirmedDates.push(joinDate)
-      //   }
-      // })
-
       let arrayDate
       let joinDate
       if (body.event.date){
@@ -65,10 +59,12 @@ class ThankYouContainer extends Component {
         joinDate = arrayDate[1] + "-" + arrayDate[2] + "-" + arrayDate[0]
       }
 
-      let bodyObject
+      let event
       if (body.event.date) {
-        bodyObject = {
+        event = {
           selectedDay: new Date(joinDate),
+          name: body.event.name,
+          description: body.event.description,
           time: body.event.time,
           firstName: body.event.contact_first_name,
           lastName: body.event.contact_last_name,
@@ -92,7 +88,9 @@ class ThankYouContainer extends Component {
           confirmedDates: confirmedDates
         }
       }
-      this.setState({ event: bodyObject })
+      this.setState({ event: event,
+        user: body.user,
+        company: body.company })
     })
   }
 
@@ -105,6 +103,8 @@ class ThankYouContainer extends Component {
         <div className="cell small-6">
           <ThankYouTile
             event={this.state.event}
+            user={this.state.user}
+            company={this.state.company}
             />
         </div>
       </div>

@@ -201,8 +201,9 @@ class EventDetailsFormContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
+        debugger
         if (body) {
-          return location.href=`/users/${body.user_id}`
+          return location.href=`/thankyou/${body.id}`
         } else {
           return locaiton.href=`/users/sign_up`
         }
