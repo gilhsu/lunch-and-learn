@@ -1,0 +1,42 @@
+<div class="background-white">
+  <img src="https://s3.amazonaws.com/welunchandlearn/uploads/logo.png" style='height: 40px; margin: 20px 0px 15px 0px;'/>
+  <br/>
+  <div class="text4 weight3">
+    <span class="text3 weight5"><%= @event.contact_first_name %> <%= @event.contact_last_name %></span> from <span class="text3 weight5"><%= @event.client_company %></span> has just confirmed your Lunch&Learn event!
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    Here are the confirmed event details:
+  </div>
+  <br/>
+  <div class="text4 weight3">
+    Event Name:<br/>
+    <span class="text3 weight5"><%= @event.name %></span>
+    <br/>
+    <br/>
+    Event Description:<br/>
+    <span class="text3 weight5"><%= @event.description %></span>
+    <br/>
+    <br/>
+    Presentation Date:<br/>
+    <span class="text3 weight5"><%= @event.date.strftime('%A, %B %e, %Y') %></span>
+    <br/>
+    <br/>
+    Presentation Location:<br/>
+    <span class="text3 weight5"><%= @event.address %>, <%= @event.suite %> <br/>
+    <%= @event.city %>, <%= @event.state %> <%= @event.zip %></span>
+    <br/>
+    <br/>
+    Food Selection:<br/>
+    <span class="text3 weight5">1. <%= @event.food_one %><br/>
+    2. <%= @event.food_two %></span>
+    <br/>
+    <br/>
+    <div>
+      <%= link_to 'Click Here to See All Your Events', user_url(@user), :class => 'weight4 primary' %>
+    </div>
+    <br/>
+    The WeLunch&Learn Team <br/>
+    <a class="text4 weight3 primary" href="https://welunchandlearn.herokuapp.com">https://welunchandlearn.herokuapp.com</a>
+  </div>
+<div>
