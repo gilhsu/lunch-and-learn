@@ -38,10 +38,13 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def update
-    event = Event.find(params[:id])
-    event.confirmed = true
-    if event.update_attributes(event_params)
-      render json: event
+    @event = Event.find(params[:id])
+    @event.confirmed = true
+    @user = @event.user
+    if @event.update_attributes(event_params)
+      ConfirmMailer.presenter_confirm(@user, @event).deliver_now
+      ConfirmMailer.presentee_confirm(@user, @event).deliver_now
+      render json: @event
     else
       render json: {error: review.errors.full_messages}, status: :unprocessable_entity
     end
