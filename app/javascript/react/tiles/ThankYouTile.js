@@ -82,9 +82,10 @@ const ThankYouTile = (props) => {
           <div className="text4 weight4">
             Food Selections
           </div>
-          <div className="text3 weight7 primary">
-            {props.event.foodOne}<br/>
-            {props.event.foodTwo}
+          <div className="text3 weight7">
+            1. <span className="text3 weight7 primary">{props.event.foodOne}</span>
+            <br/>
+            2. <span className="text3 weight7 primary">{props.event.foodTwo}</span>
           </div>
         </div>
         </div>
