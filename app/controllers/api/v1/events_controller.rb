@@ -3,9 +3,11 @@ class Api::V1::EventsController < ApplicationController
 
   def show
     event = Event.find(params[:id])
+    user = event.user
+    company = user.company
     # restaurants = event.restaurants.limit(3)
 
-    render json: {event: event}
+    render json: {event: event, user: user, company: company}
   end
 
   def edit

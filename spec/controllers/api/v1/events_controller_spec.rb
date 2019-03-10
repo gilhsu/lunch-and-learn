@@ -13,8 +13,7 @@ RSpec.describe Api::V1::EventsController, type: :controller do
     # note the fact that you should remove the "validate_session" parameter if this was a scaffold-generated controller
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
-
-      expect(returned_json.length).to eq 1
+      expect(returned_json.length).to eq 3
       expect(returned_json["event"]["name"]).to eq event1.name
       expect(returned_json["event"]["email"]).to eq event1.email
       expect(returned_json["event"]["description"]).to eq event1.description
