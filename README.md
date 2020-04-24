@@ -4,12 +4,10 @@
 A scheduler app that helps initate and coordinate lunch-and-learn events with intuitive 2-party forms, automated mailers and appointment scheduling functionality.
 
 ## About
-Thanks for checking out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling an existing and persistant business problem. The development of this project has been an incredible learning experience and I look forward to continuing my education in programming through future releases. 
-
-*Please note that weLunch&Learn is still very much a work in progress!* :wink:
+Thanks for checking out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails.
 
 ## The Business Problem
-A lunch-and-learn is an aptly named catered lunch event where an external or internal presenter shares his or her wisdom to a group of presentees. Despite sounding trivial, note the slew of important information needed to coordinate such an event below. Typically this information is shared and coordinated via email. There must be a better way!
+A lunch-and-learn is a catered lunch event where an external or internal presenter shares his or her wisdom to a group of presentees. While this my sound trivial, a slew of important information needed to coordinate such an event. Below is the information typically shared and coordinated via email. There must be a better way!
 - Availability of Presenter
 - Availability of Presentee Group
 - Number of Attendees
