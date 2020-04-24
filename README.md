@@ -3,12 +3,6 @@
 # weLunch&Learn
 A scheduler app that helps initate and coordinate lunch-and-learn events with intuitive 2-party forms, automated mailers and appointment scheduling functionality.
 
-## Heroku Link
-https://welunchandlearn.herokuapp.com
-
-*Due to api key dependencies, please use the Heroku link to access the app's full functionality.*
-
-
 ## About
 Thanks for checking out weLunch&Learn. This is my first capstone project as a programmer and it was built during my time at Launch Academy, a Boston-area web development bootcamp focused on React and Ruby on Rails. I really enjoyed creating this application and tackling an existing and persistant business problem. The development of this project has been an incredible learning experience and I look forward to continuing my education in programming through future releases. 
 
