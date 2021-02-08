@@ -62,7 +62,7 @@ gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'webpacker', '~> 3.3'
 gem "active_model_serializers"
-gem 'carrierwave', '~>1.0'
+gem 'carrierwave', '~>1.3'
 gem 'fog'
 gem 'http'
 gem 'inline_styles_mailer'
